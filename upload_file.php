@@ -35,7 +35,7 @@ if (isset($_SESSION['user_key'])) {
     // limpado a string e colocando uma conta barra
 
 
-    $sql_iserir = "UPDATE usuario set img='$novo_nome' where id_usuario = '$id_usuario'";
+    $sql_iserir = "UPDATE tb_usuario set img='$novo_nome' where id_usuario = '$id_usuario'";
     echo "<br> sql = " . $sql_iserir;
 
     $res = mysqli_query($link, $sql_iserir);
@@ -43,7 +43,7 @@ if (isset($_SESSION['user_key'])) {
 
     if ($res) {
         echo "atualizado com sucesso";
-        header('location: perfil_cadastro.php');
+        header('location: perfil_user.php');
     } else {
         echo "Erro ao cadastrar entre em contato com o administrador";
     }

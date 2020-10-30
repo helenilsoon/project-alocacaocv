@@ -5,7 +5,7 @@ require_once('conexao.php');
 $con = new Conexao();
 $con  = $con->conecta();
 
-$busca = "SELECT * FROM usuario where nome LIKE '%e%'";
+$busca = "SELECT * FROM tb_usuario where nome LIKE '%e%'";
 
 $total_reg = "10"; // número de registros por página
 

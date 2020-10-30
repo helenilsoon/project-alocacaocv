@@ -26,28 +26,40 @@ if (isset($_SESSION['user_key'])) {
         //recebe os dados e filtra
         $nome = filter_var($_POST['f_nome'], FILTER_SANITIZE_STRING);
         $sobrenome = filter_var($_POST['f_sobrenome'], FILTER_SANITIZE_STRING);
-        $data_nascimento = mysqli_real_escape_string($link, $_POST['data_nascimento']);
+        $data_nascimento =filter_var ($_POST['data_nascimento'], FILTER_SANITIZE_STRING);
         $telefone = filter_var($_POST['f_tel'], FILTER_SANITIZE_NUMBER_INT);
         $celular = filter_var($_POST['f_cel'], FILTER_SANITIZE_NUMBER_INT);
         $senha = md5(mysqli_real_escape_string($link, $_POST['f_senha']));
         $email = filter_var($_POST['f_email'], FILTER_SANITIZE_EMAIL);
 
         //execulta uma consulta pra validar se e mo mesmo usuario que ta editando para não editar outros usuarios
-        $sql_perfil = "SELECT id_usuario FROM usuario WHERE id_usuario= $id_usuario";
+        $sql_perfil = "SELECT id_usuario FROM tb_usuario WHERE id_usuario = $id_usuario";
+
         $resposta = mysqli_query($link, $sql_perfil);
+           
+        
 
         // testa se  for o mesmo usuario ai sim atualizar se não manda uma mensagem de erro
+        
+        $data_nascimento = implode('-',array_reverse(explode('/',$data_nascimento)));
+
+        var_dump($data_nascimento);
+        echo "<br>";
+
         if ($resposta) {
 
             //query para atualizar
-            $sql_perfil = "UPDATE usuario set nome = '$nome', sobrenome ='$sobrenome', data_nascimento= '$data_nascimento', TEL= '$telefone', CEL = '$celular', email = '$email' where id_usuario = $id_usuario ";
+            $sql_perfil = "UPDATE tb_usuario set";
+            $sql_perfil .= " nome = '$nome', sobrenome ='$sobrenome', data_nascimento= '$data_nascimento', TEL= '$telefone', CEL = '$celular', email = '$email' WHERE id_usuario = '$id_usuario' ";
 
+
+            var_dump($sql_perfil);
             if (mysqli_query($link, $sql_perfil)) {
 
-                header('location: perfil_cadastro.php?sucess=&');
+                header('location: perfil_user.php?sucess=&');
             } else {
 
-                header('location: perfil_cadastro.php?erro=&');
+                header('location: perfil_user.php?erro=&');
             }
         } else {
             echo " voçê não tem permissão pra atualizar";
@@ -81,8 +93,7 @@ if (isset($_SESSION['user_key'])) {
         // testa se  for o mesmo usuario ai sim atualizar se não manda uma mensagem de erro
         if ($res) {
 
-            $sql = "UPDATE endereco set cep = $cep, rua ='$rua', bairro= '$bairro', municipio = '$municipio', estado = '$estado'
-    where id_usuario = $id_usuario ";
+            $sql = "UPDATE endereco set cep = $cep, rua ='$rua', bairro= '$bairro', municipio = '$municipio', estado = '$estado'  where id_usuario = $id_usuario ";
 
 
 

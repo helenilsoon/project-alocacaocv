@@ -1,98 +1,176 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Welbuild | conectando pessoas para um bom serviços</title>
-
-</head>
-
-<body>
-    <!--Menu da pagina-->
-    <?php require_once("topo.php"); ?>
-    <!--slide-->
-    <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-end " data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-
-        <div class="row  p-0 m-0 d-flex  border">
-            <div class="col-6 p-5">
-                <img src="" alt="">
-                <p class="p-2">O site WeBuild ajuda a conectar oferta e demanda no setor de obras, reformas
-                    e serviços.Oferecendo aos usuários a possibilidade de buscar profissionais
-                    da área de construção civil da sua região para que possam ser contratado
-                </p>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-            </div>
-            <div class="col-md-6">
-
-                <div class="carousel-inner    ">
+<?php
+/**
+ * auhor: helenilson Oliveira
+ * data : 11/12/2019
+ *
+ * Descrition: Tela de login
+ *
+ */
 
 
 
-                    <div class="carousel-item  active  ">
+?>
 
-                        <img class="d-block  w-100" src="img/ilustracao-pag-incial.png" alt="Primeiro Slide">
+
+<?php
+require_once "topo.php";
+?>
+<div class="container  mb-sm-1">
+
+    <div class="row ">
+        <div class="col-sm">
+
+            <div class="py-2c h-100">
+                <div class="p-md-5 py-sm-1">
+
+                    <h1 class="logomarca"> WE BUILD</h1>
+                    <div class="descrit">
+                        <p class="text-justify"> Conecta pessoas que querem um profissional para uma piquena ou
+                            grande reforma ou para profissionais, ofertando
+                            serviços no setor de construção civil criando uma oportunidade de trabalho. </p>
+
+                        <p class="  text-justify" id="descricao-webuild">
+
+                            <br>
+                            voçê e um profissional? <a href="cadastrar.php">cadastre-se</a>
+                        </p>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="img/ilustracao-pag-incial.png" alt="Segundo Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="img/ilustracao-pag-incial.png" alt="Terceiro Slide">
+                    <div class="text-center">
+                        <a class="btn-sm text-white px-4 py-2 my-0 text-center rounded-pill btn-orange " id="btn-d"
+                            onclick='viewDescription()'> Saiba mais.</a>
                     </div>
                 </div>
 
+                <!-- Formulario principal da pesqisa Search
+                    <div class="form-search ">
 
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
+                        <form method="GET" action="search.php" id="procurar_profissional" class="col-md-10 col-sm-10 form-inline  f-search">
+                            <span class="input-group-addon">
+                                <input class="form-control  f-campo-serch" type="search" id="search" name="pesquisa" placeholder="Qual profissional você precisa?" aria-label="Pesquisar " required>
+
+                                <button type="submit" id="btn-procurar" name="btn_procurar" class="btn-search f-btn-search">
+                                    <i class="fa fa-search">
+                                    </i>
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                    fim formulario Search-->
+
             </div>
+
+
+
         </div>
+        <div class="col-sm">
+            <figure>
+                <img class="w-100" src="img/arte-pg-inicial.png" alt="">
+            </figure>
+        </div>
+
+
     </div>
-    <!--fim slide-->
+</div>
+<div class="container-fluid">
     <!--Conteudo principal-->
     <main>
-        <div class="row border">
-            <div class="col-md-12 d-flex circulos border">
+        <div class="row ">
+            <div class="col-md-12  containe-icon ">
 
-                <div class="estilo d-inline-block " id="div1">
-                    <div class="degrade"></div>
+                <div class="estilo  " id="div1">
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-pintor.svg" alt="Profissão pintor">
+                        <p>Pintor</p>
+                    </div>
                 </div>
                 <div class="estilo" id="div2">
 
+
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão Arquiteto">
+                        <p>Arquiteto</p>
+                    </div>
 
 
                 </div>
                 <div class="estilo" id="div3">
 
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-eletricista.svg" alt="Profissão Eletrici
+                            sta">
+                        <p>Eletricista</p>
+
+                    </div>
 
 
                 </div>
 
+
                 <div class="estilo" id="div4">
 
-
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-encanador.svg" alt="Profissão Encanador">
+                        <p>Encanador</p>
+                    </div>
 
                 </div>
 
                 <div class="estilo" id="div5">
 
-
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-marceneiro.svg" alt="Profissão Marceneiro">
+                        <p>Marceneiro</p>
+                    </div>
                 </div>
 
                 <div class="estilo" id="div6">
+
+                    <div class="icon_profissionais">
+                        <img src="icon/icones-profissoes/icon-profissao-montador.svg"
+                            alt="Profissão Montador de moveis">
+                        <p>Montador</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap ml-25 ml-sm-25 justify-content-center  ">
+                    <div class="estilo d-inline-block " id="div1">
+                        <div class="icon_profissionais">
+                            <img src="icon/icones-profissoes/icon-profissao-pedreiro.svg" alt="Profissão Pedreiro">
+                            <p>Pedreiro</p>
+                        </div>
+                    </div>
+                    <div class="estilo" id="div2">
+
+                        <div class="icon_profissionais">
+                            <img src="icon/icones-profissoes/carpinteiro.svg" alt="Profissão Carpinteiro">
+                            <p>Carpinteiro</p>
+                        </div>
+
+                    </div>
+                    <div class="estilo" id="div3">
+
+                        <div class="icon_profissionais">
+                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
+                            <p>Pintor</p>
+                        </div>
+
+                    </div>
+
+                    <div class="estilo" id="div4">
+
+                        <div class="icon_profissionais">
+                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
+                            <p></p>
+                        </div>
+
+                    </div>
+
+                    <div class="estilo" id="div5">
+                        <div class="icon_profissionais">
+                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
+                            <p></p>
+                        </div>
+
+                    </div>
 
 
                 </div>
@@ -100,17 +178,35 @@
             </div>
         </div>
     </main>
+</div>
+<!--rodape-->
+<footer>
 
-    <!--rodape-->
-    <footer>
 
-
-    </footer>
-    <script src="js/jquery.js">
-    </script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.js"></script>
+</footer>
+<script src="js/jquery.js">
+</script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
 
 </body>
+<script>
+function viewDescription() {
+    var des = document.querySelector('#descricao-webuild');
+    var btn = document.querySelector("#btn-d");
+
+    if (des.style.visibility == "visible") {
+        des.style = "visibility:hidden;transition: height .4s ease; -webkit-transition: height .4s;height:0;";
+        btn.innerText = "Saiba mais.";
+
+    } else {
+        des.style = ";visibility:visible;transition: height .4s ease; -webkit-trasition: height .4s;height:50px;";
+        btn.innerText = "Fechar";
+
+
+
+    }
+}
+</script>
 
 </html>
