@@ -33,23 +33,23 @@
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
 
-        $('#btn-file').click(function(event) {
+    $('#btn-file').click(function(event) {
 
-            $('#modal').css("visibility", "visible");
-        });
+        $('#modal').css("visibility", "visible");
+    });
 
-        $("#input-id").fileinput();
+    $("#input-id").fileinput();
 
-        // with plugin options
-        $("#input-id").fileinput({
-            'showUpload': false,
-            'previewFileType': 'any',
-
-        });
+    // with plugin options
+    $("#input-id").fileinput({
+        'showUpload': false,
+        'previewFileType': 'any',
 
     });
+
+});
 </script>
 
 
@@ -62,7 +62,7 @@
         $id_usuario = $_SESSION['id_usuario'];
         $con = new Conexao();
         $link = $con->conecta();
-        $sql_file = "SELECT img FROM usuario WHERE id_usuario = $id_usuario";
+        $sql_file = "SELECT img FROM tb_usuario WHERE id_usuario = $id_usuario";
         $resposta = mysqli_query($link, $sql_file);
         if ($r = mysqli_fetch_assoc($resposta)) {
             $img = $r['img'];
@@ -79,13 +79,14 @@
         ?>
 
     </div>
-    <button class="btn-sm w-50 text-white px-4 py-2 mx-auto my-2 rounded-pill btn-orange " data-toggle="modal" data-target="#upload-file"> file </button>
+    <button class="btn-sm w-50 text-white px-4 py-2 mx-auto my-2 rounded-pill btn-orange " data-toggle="modal"
+        data-target="#upload-file"> file </button>
 
 </div>
 <div class="border shadow">
     <ul class="nav flex-column p-2 ">
         <li class="nav-item ">
-            <a class="rounded-pill w-75  nav-link " href="perfil_cadastro.php">Perfil</a>
+            <a class="rounded-pill w-75  nav-link " href="perfil_user.php">Perfil</a>
         </li>
         <li class="nav-item">
             <a class="rounded-pill w-75  nav-link" href="enderecos.php">Endereços</a>

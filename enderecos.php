@@ -1,4 +1,12 @@
 <?php
+/**
+ * auhor: helenilson Oliveira
+ * data : 15/12/2019
+ * 
+ * Descrition: Tela de login
+ * 
+ */
+
 session_start();
  Error_reporting (0);
 require_once('conexao.php');
@@ -15,7 +23,7 @@ $_SESSION['token_endereco'] = $token;
 $con = new Conexao();
 $link = $con->conecta();
 
-$sql = "SELECT * FROM endereco where id_usuario = '$id_usuario'";
+$sql = "SELECT * FROM tb_endereco where id_usuario = '$id_usuario'";
 
 if ($res = mysqli_query($link, $sql)) {
     $resp = mysqli_fetch_assoc($res);
@@ -44,14 +52,14 @@ if ($res = mysqli_query($link, $sql)) {
     <title>Painel administrativo</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#btnEditar").click(function() {
+    $(document).ready(function() {
+        $("#btnEditar").click(function() {
 
-                $('input').removeAttr("readonly");
-                $('select').removeAttr("disabled");
-            });
+            $('input').removeAttr("readonly");
+            $('select').removeAttr("disabled");
+        });
 
-        })
+    })
     </script>
 
 </head>
@@ -79,24 +87,28 @@ if ($res = mysqli_query($link, $sql)) {
                     <div class="form-row ">
                         <div class="form-group col-md-6">
                             <label for="cep">CEP</label>
-                            <input type="text" readonly class="input-form form-control" name="cep" id="cep" value="<?= $cep ?>" placeholder="CEP">
+                            <input type="text" readonly class="input-form form-control" name="cep" id="cep"
+                                value="<?= $cep ?>" placeholder="CEP">
                             <small id="emailHelp" class="form-text text-muted">somente números.</small>
                         </div>
                     </div>
                     <div class="form-row ">
                         <div class="form-group col-md-10">
                             <label for="rua">Rua</label>
-                            <input type="text" readonly class="  input-form form-control" name="rua" id="rua" value="<?= $rua ?>" placeholder="Rua">
+                            <input type="text" readonly class="  input-form form-control" name="rua" id="rua"
+                                value="<?= $rua ?>" placeholder="Rua">
 
                         </div>
                         <div class="form-row ">
                             <div class="form-group col-md-6">
                                 <label for="bairro">Bairro</label>
-                                <input type="text" readonly class="form-control-plaintext input-form form-control" name="bairro" id="bairro" value="<?= $bairro ?>" placeholder="Bairro">
+                                <input type="text" readonly class="form-control-plaintext input-form form-control"
+                                    name="bairro" id="bairro" value="<?= $bairro ?>" placeholder="Bairro">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="municipio">Municipio</label>
-                                <input type="text" readonly class="input-form form-control " name="municipio" name="estado" id="municipio" value="<?= $municipio ?>" placeholder=" Municipio">
+                                <input type="text" readonly class="input-form form-control " name="municipio"
+                                    name="estado" id="municipio" value="<?= $municipio ?>" placeholder=" Municipio">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="estado">Estado</label>
