@@ -14,9 +14,9 @@
  	{
  		$opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
  		$this->conn = new PDO(
- 			"mysql:host=localhost;dbname=",
- 			"", 
- 			"", 
+ 			"mysql:host=localhost;dbname=id11855241_db_webuild",
+ 			"root", 
+ 			"1234", 
  			$opcoes
  		);
  	}

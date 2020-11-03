@@ -17,7 +17,8 @@ Error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Webuild </title>
+    <title> <?php echo $pg; ?> | Webuild </title>
+    <link rel="shortcut icon" href="img/webuild.ico">
     <link href="icon/css/fontawesome.css" rel="stylesheet">
     <link href="icon/css/brands.css" rel="stylesheet">
     <link href="icon/css/solid.css" rel="stylesheet">

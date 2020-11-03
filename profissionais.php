@@ -51,6 +51,8 @@ $sql .= "LIMIT $inicio,$registro_por_pagina";
 $res = mysqli_query($link, $sql);
 
 $total_paginas = ceil($num_registro / $registro_por_pagina);
+
+//requerendo o topo da pagina 
 require_once('topo.php');
 ?>
 
@@ -178,8 +180,6 @@ require_once('topo.php');
 <?php
 
 require_once('rodape.php');
-
-
 
 
 ?>

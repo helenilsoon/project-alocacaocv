@@ -14,27 +14,16 @@ $erro_msg_precisa_login = isset($_SESSION['erro_msg_precisa_login']) ? $_SESSION
 $token = hash('sha512', rand(100, 1000));
 $_SESSION['token'] = $token;
 
-Error_reporting(0);
-?>
+$pg = "Entrar";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="img/webuild.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Entrar | WEBUILD</title>
-</head>
+    //Menu da pagina--
+    require_once "topo.php";
 
-<body>
-    <!--Menu da pagina-->
-    <?php require_once "topo.php";
+        if ($erro_msg_precisa_login != "") {
 
-if ($erro_msg_precisa_login != "") {
-    echo $erro_msg_precisa_login;
-}
-?>
+            echo $erro_msg_precisa_login;
+        }
+ ?>
 
     <!--Conteudo principal-->
     <main>
@@ -71,22 +60,22 @@ if ($erro_msg_precisa_login != "") {
                         </div>
 
                         <?php
-if ($erro_msg_user_no_exist != "") {
-    echo "<div class='alert alert-danger my-2' role='alert'> <small>";
-    echo $erro_msg_user_no_exist;
+                            if ($erro_msg_user_no_exist != "") {
+                                echo "<div class='alert alert-danger my-2' role='alert'> <small>";
+                                echo $erro_msg_user_no_exist;
 
-    echo "</smal></div>";
-    unset($_SESSION['erro_usuario_no_exist']);
-}
-if ($erro_msg_campos_vazio != "") {
+                                echo "</smal></div>";
+                                unset($_SESSION['erro_usuario_no_exist']);
+                            }
+                            if ($erro_msg_campos_vazio != "") {
 
-    echo "<div class='alert alert-danger my-2' role='alert'> <small>";
-    echo $erro_msg_campos_vazio;
+                                echo "<div class='alert alert-danger my-2' role='alert'> <small>";
+                                echo $erro_msg_campos_vazio;
 
-    echo "</smal></div>";
-    unset($_SESSION['erro_preencha_campos']);
-}
-?>
+                                echo "</smal></div>";
+                                unset($_SESSION['erro_preencha_campos']);
+                            }
+                        ?>
 
 
                         <div class="form-group form-check">
@@ -108,12 +97,9 @@ if ($erro_msg_campos_vazio != "") {
     </main>
 
     <!--rodape-->
-    <footer>
+ 
         <?php require_once "rodape.php";?>
 
-    </footer>
+   
 
 
-</body>
-
-</html>

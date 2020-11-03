@@ -7,13 +7,13 @@
  *
  */
 
+$pg = "Webuild conectando pessoas";
 
 
-?>
-
-
-<?php
 require_once "topo.php";
+
+require_once "config/config.php";
+
 ?>
 <div class="container  mb-sm-1">
 
@@ -77,119 +77,29 @@ require_once "topo.php";
         <div class="row ">
             <div class="col-md-12  containe-icon ">
 
-                <div class="estilo  " id="div1">
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-pintor.svg" alt="Profissão pintor">
-                        <p>Pintor</p>
-                    </div>
-                </div>
-                <div class="estilo" id="div2">
 
+                <?php
+                //Obtendo profissões do banco de dados
+                $profissao = Profissao::getAllUser();
 
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão Arquiteto">
-                        <p>Arquiteto</p>
-                    </div>
+                 foreach ($profissao as $row):  ?>
 
-
-                </div>
-                <div class="estilo" id="div3">
-
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-eletricista.svg" alt="Profissão Eletrici
-                            sta">
-                        <p>Eletricista</p>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="estilo" id="div4">
-
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-encanador.svg" alt="Profissão Encanador">
-                        <p>Encanador</p>
-                    </div>
-
-                </div>
-
-                <div class="estilo" id="div5">
-
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-marceneiro.svg" alt="Profissão Marceneiro">
-                        <p>Marceneiro</p>
-                    </div>
-                </div>
-
-                <div class="estilo" id="div6">
-
-                    <div class="icon_profissionais">
-                        <img src="icon/icones-profissoes/icon-profissao-montador.svg"
-                            alt="Profissão Montador de moveis">
-                        <p>Montador</p>
-                    </div>
-                </div>
-                <div class="d-flex flex-wrap ml-25 ml-sm-25 justify-content-center  ">
-                    <div class="estilo d-inline-block " id="div1">
+                     <div class="estilo  " id="div1">
                         <div class="icon_profissionais">
-                            <img src="icon/icones-profissoes/icon-profissao-pedreiro.svg" alt="Profissão Pedreiro">
-                            <p>Pedreiro</p>
+                            <img src="icon/icones-profissoes/<?= $row['icon']?>" alt="<?= $row['nome_profissao']?>">
+                            <p><?= utf8_encode($row['nome_profissao'])?></p>
                         </div>
-                    </div>
-                    <div class="estilo" id="div2">
-
-                        <div class="icon_profissionais">
-                            <img src="icon/icones-profissoes/carpinteiro.svg" alt="Profissão Carpinteiro">
-                            <p>Carpinteiro</p>
-                        </div>
-
-                    </div>
-                    <div class="estilo" id="div3">
-
-                        <div class="icon_profissionais">
-                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
-                            <p>Pintor</p>
-                        </div>
-
-                    </div>
-
-                    <div class="estilo" id="div4">
-
-                        <div class="icon_profissionais">
-                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
-                            <p></p>
-                        </div>
-
-                    </div>
-
-                    <div class="estilo" id="div5">
-                        <div class="icon_profissionais">
-                            <img src="icon/icones-profissoes/icon-profissao-arquiteto.svg" alt="Profissão pintor">
-                            <p></p>
-                        </div>
-
-                    </div>
-
-
-                </div>
+                     </div>
+                    
+                <?php endforeach ?>           
+ 
 
             </div>
         </div>
     </main>
 </div>
 <!--rodape-->
-<footer>
 
-
-</footer>
-<script src="js/jquery.js">
-</script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.js"></script>
-
-</body>
 <script>
 function viewDescription() {
     var des = document.querySelector('#descricao-webuild');
@@ -203,10 +113,7 @@ function viewDescription() {
         des.style = ";visibility:visible;transition: height .4s ease; -webkit-trasition: height .4s;height:50px;";
         btn.innerText = "Fechar";
 
-
-
     }
 }
 </script>
 
-</html>
