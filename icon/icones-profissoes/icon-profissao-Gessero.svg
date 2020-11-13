@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (1.0+r73+1)"
+   sodipodi:docname="icon-profissao-Gessero.svg"
+   id="svg797"
+   version="1.1"
+   width="512pt"
+   viewBox="0 0 512 512"
+   height="512pt">
+  <metadata
+     id="metadata803">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs801" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg797"
+     inkscape:window-maximized="1"
+     inkscape:window-y="73"
+     inkscape:window-x="0"
+     inkscape:cy="341.33333"
+     inkscape:cx="767.46105"
+     inkscape:zoom="0.69580078"
+     showgrid="false"
+     id="namedview799"
+     inkscape:window-height="669"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="fill:#ffffff"
+     id="path761"
+     fill="#ff583e"
+     d="m60 124h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path763"
+     fill="#ff583e"
+     d="m196.59375 124h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path765"
+     fill="#ff583e"
+     d="m333.1875 124h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path767"
+     fill="#ff583e"
+     d="m60 264h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path769"
+     fill="#ff583e"
+     d="m196.59375 264h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path771"
+     fill="#db0404"
+     d="m256.40625 264h59v54h-59zm0 0" />
+  <g
+     style="fill:#ffffff"
+     id="g785"
+     fill="#ff583e">
+    <path
+       style="fill:#ffffff"
+       id="path773"
+       d="m333.1875 264h118.8125v54h-118.8125zm0 0" />
+    <path
+       style="fill:#ffffff"
+       id="path775"
+       d="m129 194h118.8125v54h-118.8125zm0 0" />
+    <path
+       style="fill:#ffffff"
+       id="path777"
+       d="m265.59375 194h118.8125v54h-118.8125zm0 0" />
+    <path
+       style="fill:#ffffff"
+       id="path779"
+       d="m402.1875 194h48.699219v54h-48.699219zm0 0" />
+    <path
+       style="fill:#ffffff"
+       id="path781"
+       d="m60 194h50v54h-50zm0 0" />
+    <path
+       style="fill:#ffffff"
+       id="path783"
+       d="m129 334h118.8125v54h-118.8125zm0 0" />
+  </g>
+  <path
+     style="fill:#ffffff"
+     id="path787"
+     fill="#db0404"
+     d="m265.59375 334h118.8125v54h-118.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path789"
+     fill="#ff583e"
+     d="m402.1875 334h49.8125v54h-49.8125zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path791"
+     fill="#ff583e"
+     d="m60 334h50v54h-50zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path793"
+     fill="#fff"
+     d="m452 124h-304.421875c17.761719 30.914062 42.53125 56.667969 76.421875 72 13 5 24 17 26 30 5 33 9 72 37 87 35.472656 20.496094 78.390625 39.132812 93.019531 75h71.980469zm0 0" />
+  <path
+     style="fill:#ffffff"
+     id="path795"
+     fill="#e9edf5"
+     d="m256.40625 124v139.554688c4.835938 21.007812 12.949219 39.992187 30.59375 49.445312 35.472656 20.496094 78.390625 39.132812 93.019531 75h71.980469v-264zm0 0" />
+</svg>
