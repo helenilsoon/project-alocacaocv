@@ -6,8 +6,7 @@ $erro_msg_campos_vazio = isset($_SESSION['erro_preencha_campos']) ? $_SESSION['e
 $erro_msg_user_no_exist = isset($_SESSION['erro_usuario_no_exist']) ? $_SESSION['erro_usuario_no_exist'] : "";
 $token = hash('sha512', rand(100, 1000));
 $_SESSION['token'] = $token;
-ini_set("display_errors",1);
-error_reporting(E_ALL);
+
 
 $pg = "Cadastrar-se ";
 
@@ -18,7 +17,7 @@ $pg = "Cadastrar-se ";
     $use = new ControllerUser();
 
     $lis = $use->getNome();
-   var_dump ($lis);
+
  //Menu da pagina-->
     require_once "topo.php";
     
@@ -37,7 +36,7 @@ $pg = "Cadastrar-se ";
                     <!-- definido a altura heigth 100vh o center-block funciona-->
 
                     <!--Inicio formulario-->
-                    <form class="center-block" action="App/ControllerUser.php" method="POST" id="formulario_cadastro">
+                    <form class="center-block" action="validar_cadastro.php" method="POST" id="formulario_cadastro">
                         <div class="d-flex justify-content-center p-5">
                             <h3 class="text-orange">Cadastre-se </h3>
                         </div>

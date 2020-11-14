@@ -87,7 +87,7 @@ require_once "config/config.php";
                      <div class="estilo  " id="div1">
                         <div class="icon_profissionais">
                             <img src="icon/icones-profissoes/<?= $row['icon']?>" alt="<?= $row['nome_profissao']?>">
-                            <p><?= utf8_encode($row['nome_profissao'])?></p>
+                            <p><?= $row['nome_profissao']?></p>
                         </div>
                      </div>
                     
