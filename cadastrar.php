@@ -6,12 +6,7 @@ $erro_msg_campos_vazio = isset($_SESSION['erro_preencha_campos']) ? $_SESSION['e
 $erro_msg_user_no_exist = isset($_SESSION['erro_usuario_no_exist']) ? $_SESSION['erro_usuario_no_exist'] : "";
 $token = hash('sha512', rand(100, 1000));
 $_SESSION['token'] = $token;
-<<<<<<< HEAD
 
-=======
-ini_set("display_errors",1);
-error_reporting(E_ALL);
->>>>>>> 6ae5ac9bd52361f4052eed0396239ae40505a6ac
 
 $pg = "Cadastrar-se ";
 
@@ -22,12 +17,7 @@ $pg = "Cadastrar-se ";
     $use = new ControllerUser();
 
     $lis = $use->getNome();
-<<<<<<< HEAD
 
-=======
-   var_dump ($lis);
->>>>>>> 6ae5ac9bd52361f4052eed0396239ae40505a6ac
- //Menu da pagina-->
     require_once "topo.php";
     
 
@@ -45,11 +35,10 @@ $pg = "Cadastrar-se ";
                     <!-- definido a altura heigth 100vh o center-block funciona-->
 
                     <!--Inicio formulario-->
-<<<<<<< HEAD
+
                     <form class="center-block" action="validar_cadastro.php" method="POST" id="formulario_cadastro">
-=======
-                    <form class="center-block" action="App/ControllerUser.php" method="POST" id="formulario_cadastro">
->>>>>>> 6ae5ac9bd52361f4052eed0396239ae40505a6ac
+
+                  
                         <div class="d-flex justify-content-center p-5">
                             <h3 class="text-orange">Cadastre-se </h3>
                         </div>
