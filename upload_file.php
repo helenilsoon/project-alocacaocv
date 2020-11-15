@@ -22,10 +22,22 @@ if (isset($_SESSION['user_key'])) {
         //rmdir('img/userid' . $id_usuario . '/');
         echo "Diretorio ja criado";
     } else {
+<<<<<<< HEAD
+        $criar = mkdir('img/userid' . $id_usuario . '', 0776, true);
+
+	$php = "<php header('Location: /');?>"; 
+	$fileIndex = fopen("index.php","w");
+	fwrite($fileIndex,$php );
+	fclose($fileIndex);	   
+ }
+    $diretorio = 'img/userid' . $id_usuario . '/';
+;
+=======
         $criar = mkdir('img/userid' . $id_usuario . '', 0775, true);
     }
     $diretorio = 'img/userid' . $id_usuario . '/';
     echo $diretorio;
+>>>>>>> 6ae5ac9bd52361f4052eed0396239ae40505a6ac
     $_UP['pasta'] = $diretorio;
 
     move_uploaded_file($_FILES['file']['tmp_name'], $diretorio . $novo_nome);
