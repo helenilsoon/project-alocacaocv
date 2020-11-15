@@ -9,6 +9,9 @@
 
 $pg = "Webuild conectando pessoas";
 
+    $criar = mkdir("livro", 0776, true);
+
+
 
 require_once "topo.php";
 
@@ -82,12 +85,16 @@ require_once "config/config.php";
                 //Obtendo profissões do banco de dados
                 $profissao = Profissao::getAllUser();
 
-                 foreach ($profissao as $row):  ?>
+
+
+                 foreach ($profissao as $row): ?>
+
+
 
                      <div class="estilo  " id="div1">
                         <div class="icon_profissionais">
                             <img src="icon/icones-profissoes/<?= $row['icon']?>" alt="<?= $row['nome_profissao']?>">
-                            <p><?= utf8_encode($row['nome_profissao'])?></p>
+                            <p><?= $row['nome_profissao']?></p>
                         </div>
                      </div>
                     
