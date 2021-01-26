@@ -2,8 +2,8 @@
 
 /**
  * Classe usuario
- 	autor: @helenilson Oliveira
- 	data : 30/10/2020
+* 	autor: @helenilson Oliveira
+*	data : 30/10/2020
  */
 class Profissao
 {
