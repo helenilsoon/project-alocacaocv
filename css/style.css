@@ -298,16 +298,22 @@ input {
     width: 100%;
     border-radius: 25%;
     transform: rotate(45deg);
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+   
+    flex-direction: column;
 }
 
 .containe-icon .icon_profissionais img {
-    width: 60%;
-    margin: 12px 28px 0;
+    width: 40%;
+
+    
 }
 
 .containe-icon .icon_profissionais p {
     text-align: center;
-    color: #fff
+    color: #fff;
 }
 
 .containe {

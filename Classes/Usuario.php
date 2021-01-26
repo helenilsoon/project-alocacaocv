@@ -30,6 +30,8 @@ class Usuario
 
 	
 	//Localizando usuario pelo id
+	
+
 	public function loadById($id){
 		$sql = new Sql();
 
@@ -47,7 +49,7 @@ class Usuario
 	public static function getAllUser(){
 		$sql = new Sql();
 
-	 	return $sql->select("SELECT * FROM tb_usuario");
+	 	return utf8_encode($sql->select("SELECT * FROM tb_usuario"));
 
 
 		

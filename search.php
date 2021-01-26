@@ -43,6 +43,7 @@ if (isset($_GET['btn_procurar'])) {
         $res = mysqli_query($link, $sql);
 
         $total_paginas = ceil($num_registro / $registro_por_pagina);
+        
         require_once 'topo.php';
         ?>
 
