@@ -3,7 +3,7 @@
  /**
   * Classe que conecta no banco de da
   * autor: @helenilson Oliveira
- 	data : 30/10/2020
+  *  data : 30/10/2020
   *
   */
  class Sql extends PDO
