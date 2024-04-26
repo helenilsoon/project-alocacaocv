@@ -4,8 +4,9 @@ require_once "./bootstrap.php";
 try{
  
     $data = router();
-
-     extract($data['data']);
+    
+     extract(isset($data['data']) ? $data['data']:[]);
+     extract(isset($data['getProfissao']) ? $data['getProfissao']:[]);  
      
      
      if(!isset($data['view'])){

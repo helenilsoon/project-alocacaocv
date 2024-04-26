@@ -19,8 +19,7 @@
                         </p>
                     </div>
                     <div class="text-center">
-                        <a class="btn-sm text-white px-4 py-2 my-0 text-center rounded-pill btn-orange " id="btn-d"
-                            onclick='viewDescription()'> Saiba mais.</a>
+                        <a class="btn-sm text-white px-4 py-2 my-0 text-center rounded-pill btn-orange " id="btn-d" onclick='viewDescription()'> Saiba mais.</a>
                     </div>
                 </div>
 
@@ -67,19 +66,19 @@
 
 
 
-                //  foreach ($profissao as $row): ?>
-                     <a href='search.php?pesquisa=<?=$row['nome_profissao']?>&btn_procurar='>
-                     <div class="estilo  " id="div1">
-                        <div class="icon_profissionais">
-                            <img src="assets/icon/icones-profissoes/<?= $row['icone']?>" alt="<?= $row['nome_profissao']?>">
+                foreach ($data['getProfissao']  as $row) : ?>
+                    <a href='search.php?pesquisa=<?= $row['nome_profissao'] ?>&btn_procurar='>
+                        <div class="estilo  " id="div1">
+                            <div class="icon_profissionais">
+                                <img src="assets/icon/icones-profissoes/<?= $row['icone'] ?>" alt="<?= $row['nome_profissao'] ?>">
 
-                            <p><?= $row['nome_profissao']?></p>
+                                <p><?= $row['nome_profissao'] ?></p>
+                            </div>
                         </div>
-                     </div>
-                     </a>
-                    
-                <!-- <?//php endforeach ?>            -->
- 
+                    </a>
+
+                <?php endforeach ?>
+
 
             </div>
         </div>
@@ -88,18 +87,18 @@
 <!--rodape-->
 
 <script>
-function viewDescription() {
-    var des = document.querySelector('#descricao-webuild');
-    var btn = document.querySelector("#btn-d");
+    function viewDescription() {
+        var des = document.querySelector('#descricao-webuild');
+        var btn = document.querySelector("#btn-d");
 
-    if (des.style.visibility == "visible") {
-        des.style = "visibility:hidden;transition: height .4s ease; -webkit-transition: height .4s;height:0;";
-        btn.innerText = "Saiba mais.";
+        if (des.style.visibility == "visible") {
+            des.style = "visibility:hidden;transition: height .4s ease; -webkit-transition: height .4s;height:0;";
+            btn.innerText = "Saiba mais.";
 
-    } else {
-        des.style = ";visibility:visible;transition: height .4s ease; -webkit-trasition: height .4s;height:50px;";
-        btn.innerText = "Fechar";
+        } else {
+            des.style = ";visibility:visible;transition: height .4s ease; -webkit-trasition: height .4s;height:50px;";
+            btn.innerText = "Fechar";
 
+        }
     }
-}
 </script>

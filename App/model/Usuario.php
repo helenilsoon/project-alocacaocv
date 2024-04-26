@@ -1,11 +1,16 @@
 <?php 
+ /**
+  * Classe usuario
+  *	autor: @helenilson Oliveira
+  *	data : 30/10/2020
+  */
 
-/**
- * Classe usuario
- 	autor: @helenilson Oliveira
- 	data : 30/10/2020
- */
-class Usuario
+namespace app\model;
+
+use app\database\Sql;
+
+
+ class Usuario
 {
 
 	private $id_usuario;
@@ -48,8 +53,8 @@ class Usuario
 
 	public static function getAllUser(){
 		$sql = new Sql();
-
-	 	return utf8_encode($sql->select("SELECT * FROM tb_usuario"));
+		$res =$sql->select("SELECT * FROM tb_usuario");
+	 	return ($res);
 
 
 		
@@ -86,7 +91,7 @@ class Usuario
 			$this->setData($results[0]);
 
 		}else{
-			throw new Exception("Erro ao cadastrar");
+			throw new \Exception("Erro ao cadastrar");
 		}
 
 	}
@@ -94,7 +99,7 @@ class Usuario
 
 		$sql = new Sql();
 
-		$sql->query("DELETE FROM tb_usuario where id_usuario = :ID",array(
+		$sql->queryExecute("DELETE FROM tb_usuario where id_usuario = :ID",array(
 			":ID"=>$this->getIdUsuario()
 		));
 	}
@@ -128,7 +133,7 @@ class Usuario
 	public function update(){
 		$sql = new Sql();
 
-		$sql->query("UPDATE tb_usuario set CPF =  :CPF, nome = :NOME, sobrenome = :SOBRENOME, img =  :IMG, sexo = :SEXO, data_nascimento = :DATANASCIMENTO, CEL = :CEL, TEL = :TEL, sobre :SOBRE, email :EMAIL, username = :USERNAME, profissao = :PROFISSAO, password = :PASSWORD, experiencia = :EXPERIENCIA, ativo = :ATIVO, tipo_usuario = :TIPOUSUARIO", array(
+		$sql->queryExecute("UPDATE tb_usuario set CPF =  :CPF, nome = :NOME, sobrenome = :SOBRENOME, img =  :IMG, sexo = :SEXO, data_nascimento = :DATANASCIMENTO, CEL = :CEL, TEL = :TEL, sobre :SOBRE, email :EMAIL, username = :USERNAME, profissao = :PROFISSAO, password = :PASSWORD, experiencia = :EXPERIENCIA, ativo = :ATIVO, tipo_usuario = :TIPOUSUARIO", array(
 			":CPF"=>$this->getCpf(),
 			":NOME"=>$this->getNome(),
 			":SOBRENOME"=>$this->getSobrenome(),

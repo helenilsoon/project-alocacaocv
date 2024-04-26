@@ -49,9 +49,12 @@ function findDinamicRouteInArray($uri, $routes)
 }
 function FormatParams($uri, $params){
   $paramsUri = explode("/", ltrim($uri, '/'));;
-  dd($uri);
-  dd($params);
+
   $paramsData= [];
+
+   if(empty($params)){
+     return $paramsData;
+   }
    foreach($params as $index=>$param){
      $paramsData[$paramsUri[$index - 1]] = $param;
    }
@@ -61,20 +64,26 @@ function router()
 {
   $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);  
   $routes = routes(); 
-  $foundUrl = findExactRouteInArray($uri, $routes);
+  $methodRequest = $_SERVER['REQUEST_METHOD'];
+  $foundUrl = findExactRouteInArray($uri, $routes[$methodRequest]);
   $params=[];
   if (empty($foundUrl)) { 
-    $foundUrl = findDinamicRouteInArray($uri, $routes);
+    $foundUrl = findDinamicRouteInArray($uri, $routes[$methodRequest]);
        $params =paramsDinamic($uri, $foundUrl);
        $params = FormatParams($uri, $params);   
        
     }
 
     if(!empty($foundUrl)){
+     
       return controller($foundUrl,$params);
+
       
    }
   
-  throw new Exception('Rota nao encontrada'); 
+  // throw new Exception('Rota nao encontrada');
+  $foundUrl = ['error404@index'];
+  $params = 'error404';
+  return controller($foundUrl,$params); 
     
 }

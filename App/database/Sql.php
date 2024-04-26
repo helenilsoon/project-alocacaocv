@@ -3,9 +3,14 @@
  /**
   * Classe que conecta no banco de da
   * autor: @helenilson Oliveira
- 	data : 30/10/2020
+  *	data : 30/10/2020
   *
   */
+
+namespace app\database;
+
+  use PDO;
+  use PDOException;
  class Sql extends PDO
  {
  		private $conn;
@@ -27,7 +32,7 @@
  	}
 
  	// Método que recebe a query e so parametros
- 	public function query($rawQuery, $params = array()){
+ 	public function queryExecute($rawQuery, $params = array()){
 	
 		try{
 			$stmt = $this->conn->prepare($rawQuery);
@@ -60,7 +65,7 @@
  	public function select($rawQuery, $params = array()):array
  	{		
 			
- 			$stmt = $this->query($rawQuery , $params);
+ 			$stmt = $this->queryExecute($rawQuery , $params);
 
  			return $stmt->fetchAll(PDO::FETCH_ASSOC);
  	}

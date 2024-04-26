@@ -1,10 +1,15 @@
 <?php 
 
+namespace app\model;
 /**
  * Classe usuario
 * 	autor: @helenilson Oliveira
 *	data : 30/10/2020
  */
+
+ use app\database\Sql;
+ use Exception;
+ 
 class Profissao
 {
 
@@ -61,7 +66,7 @@ class Profissao
 
 		$sql = new Sql();
 
-		$sql->query("DELETE FROM profissoes where id_profissoes = :ID",array(
+		$sql->queryExecute("DELETE FROM profissoes where id_profissoes = :ID",array(
 			":ID"=>$this->getIdProfissao()
 		));
 	}
@@ -80,7 +85,7 @@ class Profissao
 	public function update(){
 		$sql = new Sql();
 
-		$sql->query("UPDATE profissoes set nome_profissao = :NOMEPROFISSAO, descricao = :DESCRICAO, icon = :ICON )",array(
+		$sql->queryExecute("UPDATE profissoes set nome_profissao = :NOMEPROFISSAO, descricao = :DESCRICAO, icon = :ICON )",array(
 			":NOMEPROFISSAO"=>$this->getNomeProfissao(),
 			":DESCRICAO"=>$this->getDescricao(),
 			":ICON"=>$this->getIcon()
