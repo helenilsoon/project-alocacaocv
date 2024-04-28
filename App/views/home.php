@@ -70,7 +70,7 @@
                     <a href='search.php?pesquisa=<?= $row['nome_profissao'] ?>&btn_procurar='>
                         <div class="estilo  " id="div1">
                             <div class="icon_profissionais">
-                                <img src="assets/icon/icones-profissoes/<?= $row['icone'] ?>" alt="<?= $row['nome_profissao'] ?>">
+                                <img src="assets/icon/icones-profissoes/icon-profissao-<?= $row['icone'] ?>" alt="<?= $row['nome_profissao'] ?>">
 
                                 <p><?= $row['nome_profissao'] ?></p>
                             </div>

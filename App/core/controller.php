@@ -13,6 +13,7 @@ function controller($foundUri,$params){
     if(!method_exists($controllerInstace, $method)){
         throw new Exception("o metodo ".$method." não existe no ".$controller);
     }
+     dd($controllerInstace->$method($params),'controller and method');
    return $controllerInstace->$method($params);
    
 }
