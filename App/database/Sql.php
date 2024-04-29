@@ -17,12 +17,25 @@ namespace app\database;
 
  	function __construct()
  	{
+		if(file_exists("bd.env")){
+			$data = parse_ini_file("bd.env");
+			
+		}else{
+			$data = parse_ini_file("bdLocal.env");
+			
+		}
+		
+		$host=$data['DATABASE_HOST'];
+		$hostUser=$data['DATABASE_USER'];
+		$password=$data['DATABASE_PASSWORD'];
+		$dbName=$data['DATABASE_NAME'];
+
 		try{
 			$opcoes = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 			$this->conn = new PDO(
-				"mysql:host=localhost;dbname=id11855241_db_webuild",
-				"root", 
-				"", 
+				"mysql:host=$host;dbname=$dbName",
+				"$hostUser", 
+				"$password", 
 				$opcoes
 			);
 		}catch(PDOException $e){

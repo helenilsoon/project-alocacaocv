@@ -5,7 +5,7 @@ try{
  
     $data = router();
 
-    ddArray($data);
+    
     
      extract(isset($data['data']) ? $data['data']:[]);
      extract(isset($data['getProfissao']) ? $data['getProfissao']:[]);  

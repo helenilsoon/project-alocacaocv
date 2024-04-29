@@ -11,7 +11,7 @@ class Home
         'view'=>'home.php',
         'title'=>'Webuild | encontre profissionais gratuitamente',
         'data'=>['name'=>'helenilson oliveira'],
-        'getProfissao'=>''//$this->viewProfissao()
+        'getProfissao'=>$this->viewProfissao()
       ];
 
         
