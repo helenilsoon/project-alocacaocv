@@ -49,13 +49,13 @@
                         <div class="form-group">
                             <label for="email">Email </label>
                             <input type="email" class="form-control input-form" name="email" id="email"
-                                placeholder=" mail@example.com" pattern="+@+">
+                                placeholder=" mail@example.com" pattern="+@+" value="helenilsoon@gmail.com">
                             <small id="emailHelp" class="form-text text-muted">esqueceu seu email.</small>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control input-form" name="senha" id="senha"
-                                placeholder="Senha">
+                            <input type="password" class="form-control input-form" name="password" id="senha"
+                                placeholder="Senha" value="82111971">
                             <input type="hidden" value="<?//=//$_SESSION['token']?>" name="token" id="token">
                         </div>
 

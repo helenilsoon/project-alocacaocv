@@ -7,6 +7,8 @@ return [
     'GET'=>[
         $path.''=>'Home@index',
         $path.'login'=>'Login@index',
+        $path.'my-account'=>'MyAccount@index',
+        $path.'sair'=>'login@logout',
         $path.'cadastrar'=>'Login@signUp',
         // $path.'user/create'=>'User@create',
         $path.'user/[a-z0-9]+'=>'User@show',

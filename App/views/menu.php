@@ -1,13 +1,16 @@
 <?php
-// session_start();
-// define("DIR", "http://{$_SERVER['HTTP_HOST']}/index.php");
-if (!isset($_SESSION['nome'])) {
-    $nome_usuario = '';
+
+
+
+if (!isset($_SESSION['user'])) {
+    $nome = '';
     $id_usuario = '';
-} else {
-    $nome_usuario = $_SESSION['nome'];
-    $id_usuario = $_SESSION['id_usuario'];
+}else{
+    $nome = $_SESSION['user']['nome'];
+    $id_usuario = $_SESSION['user']['id_usuario'];
 }
+
+
 // Error_reporting(0);
 ?>
 
@@ -33,11 +36,10 @@ if (!isset($_SESSION['nome'])) {
                             <div class="dropdown-divider">
                             </div>
 
-                            <?php if ($nome_usuario) { ?>
-                                <a class="dropdown-item" href="perfil_cadastro.php"> Minha conta
-                                </a>
-                            <?php } ?>
-                        </div>
+                            <?php if($nome){ 
+                                
+                             echo '<a class="dropdown-item" href="perfil_cadastro.php"> Minha conta </a>';
+                             } ?> </div>
                     </li>
 
 
@@ -65,21 +67,21 @@ if (!isset($_SESSION['nome'])) {
         <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12 d-flex  align-items-center justify-content-center  menu-sm">
 
             <ul class="navbar-nav">
-                <li class="nav-item <?php if ($nome_usuario) {
+                <li class="nav-item <?php if ($nome) {
                                         echo "dropdown";
                                     } ?>">
-                    <?php if ($nome_usuario) {
+                    <?php if ($nome) {
                         echo "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
-                        echo "Bem vindo " . $nome_usuario . "</a>";
+                        echo "Bem vindo " . $nome . "</a>";
                     } else {
                         echo "<a class='btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange' href='cadastrar'>Cadastrar-se</a>";
                     } ?>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                        <?php if ($nome_usuario) { ?>
-                            <a class="dropdown-item" href="perfil_user.php"> Minha conta </a>
-                            <a class="dropdown-item" href="perfil_user.php"> Perfil </a>
+                        <?php if ($nome) { ?>
+                            <a class="dropdown-item" href="my-account"> Minha conta </a>
+                            <a class="dropdown-item" href="my-account"> Perfil </a>
 
                             <!--<a class="dropdown-item" href="enderecos.php"> Endereços </a>
                                         <a class="dropdown-item" href="#"> Serviços </a>-->
@@ -89,8 +91,8 @@ if (!isset($_SESSION['nome'])) {
                         <div class="dropdown-divider"> </div>
                         <!--divisor  -->
 
-                        <?php if ($nome_usuario) { ?>
-                            <a class="dropdown-item" href="perfil_user.php"> Minha conta </a>
+                        <?php if ($nome) { ?>
+                            <a class="dropdown-item" href="my-account"> Minha conta </a>
                         <?php } ?>
                     </div>
                 </li>
@@ -99,7 +101,7 @@ if (!isset($_SESSION['nome'])) {
             <ul class="navbar-nav mr-md-3">
 
                 <li class="nav-item ">
-                    <?php if ($nome_usuario) { ?>
+                    <?php if ($nome) { ?>
                         <a class="btn-sm text-white px-4 py-2 rounded-pill btn-orange " href="sair">Sair </a>
                     <?php } else {  ?>
                         <a class="btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange " href="login"> entrar</a>
