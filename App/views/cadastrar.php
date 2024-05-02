@@ -18,7 +18,8 @@
 //     $lis = $use->getNome();
 
 //     require_once "topo.php";
-    
+
+use app\helpers\Csrf;
 
 ?>
     <!--Conteudo principal-->
@@ -35,7 +36,7 @@
 
                     <!--Inicio formulario-->
 
-                    <form class="center-block" action="validar_cadastro.php" method="POST" id="formulario_cadastro">
+                    <form class="center-block" action="signUp" method="POST" id="formulario_cadastro">
 
                   
                         <div class="d-flex justify-content-center p-5">
@@ -45,13 +46,13 @@
                         <div class="form-group">
                             <label for="nome">Nome </label>
                             <input type="text" class="form-control input-form" name="nome" id="nome" placeholder=" Nome"
-                                required>
+                              value="nilsonteste oliver"  required>
 
                         </div>
                         <div class="form-group">
                             <label for="username">Username * </label>
                             <input type="text" class="form-control input-form" name="username" id="username"
-                                placeholder=" Username" required>
+                                placeholder=" Username" value="nilsonteste" required>
 
                             <div id="user_exist"></div>
 
@@ -60,15 +61,18 @@
                         <div class="form-group">
                             <label for="email">Email * </label>
                             <input type="email" class="form-control input-form" name="email" id="email"
-                                placeholder=" seuemail@mail.com" required pattern="+@+">
+                                placeholder=" seuemail@mail.com" required pattern="+@+" value="nilsonteste@teste.com">
                             <div id="email_exist"></div>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha *</label>
                             <input type="password" class="form-control input-form" name="senha" id="senha"
-                                placeholder="*************" required>
+                                placeholder="*************"  value="nilsonteste">
                             <!--  <meter value="0" id="mtSenha" max="100"></meter>-->
-                            <input type="hidden" value="<?//=$_SESSION['token']?>" name="token" id="token">
+                            <?php
+                                $token = new Csrf();
+                                echo $token->createToken();
+                            ?>
                         </div>
 
                         <?php

@@ -42,15 +42,7 @@ class Login
        
        
     }
-    public function signUp($params)
-    {
-        return[
-            'view'=>'cadastrar.php',
-            'title'=>'Criar conta | webuild encontre profissionais gratuitamente',
-            'data'=>['name'=>'helenilson oliveira']
-          
-          ];
-    }
+    
     public function logout($params){
 
         unset($_SESSION['user']);
