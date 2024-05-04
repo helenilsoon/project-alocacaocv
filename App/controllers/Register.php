@@ -3,54 +3,78 @@
 namespace app\controllers;
 
 use app\database\Sql;
+use app\helpers\CheckUser;
+use app\helpers\Csrf;
+
 class Register
 {
-    public function index($params){
+    public function index($params)
+    {
 
-        return[
-            'view'=>'cadastrar.php',
-            'title'=>'Criar conta | webuild encontre profissionais gratuitamente',
-            'data'=>[
-                'name'=>'helenilson oliveira'
-            ]
+        $data = isset($_SESSION['mensagem']) ? $_SESSION : [];
+
+
+        return [
+            'view' => 'cadastrar.php',
+            'title' => 'Criar conta | webuild encontre profissionais gratuitamente',
+            'data' => $data
         ];
     }
 
-    public function signUp($params){
-
-
-            if(!empty($_POST) && isset($_POST['token'] )){
-
-                $nome = filter_input(INPUT_POST,'nome',FILTER_SANITIZE_SPECIAL_CHARS);
-                $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS);
-                $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
-                $password = password_hash($_POST['senha'],PASSWORD_DEFAULT);
-            }
-            
-            try{
-
-                $sql = new Sql();
+    public function signUp($params)
+    {
     
-                $sql->queryExecute("INSERT INTO usuario (nome, username, mail, password) VALUES (:nome, :username, :email, :senha)", array(
-                    ":nome"=>$nome,
-                    ":username"=>$username,
-                    ":email"=>$email,
-                    ":senha"=>$password,
+
+        if (!empty($_POST) && Csrf::validateToken($_POST['token'])) {
+
+
+            $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+            $password = password_hash($_POST['senha'] . $email, PASSWORD_DEFAULT);
+
+            try {
+                $sql = new Sql();
+                    # verifica se o email ou o username existem 
+                    # response true or false
+                if(CheckUser::checkUser("email", $email)&&
+                 CheckUser::checkUser("username", $username))
+                 {
                     
+                     $_SESSION['mensagem']['emailouusername'] = "Email ou username ja existem";
+                     header("Location: cadastrar");
+
+                    exit("Email ou username ja existem");
+                 }
+
+
+
+
+                $sql->queryExecute("INSERT INTO usuario (nome, username, email, password) VALUES (:nome, :username, :email, :senha)", array(
+                    ":nome" => $nome,
+                    ":username" => $username,
+                    ":email" => $email,
+                    ":senha" => $password,
                 ));
-                 $sql->getRowCount();
-                if($sql->getRowCount() > 0){
-                    echo 'bem sucesso';
-                    
-                    echo $sql->getLastInsertId();
-                }{
-                  throw new \Exception('Erro ao cadastrar');
+
+
+
+
+                if ($sql->getRowCount() > 0) {
+                    $id = $sql->getLastInsertId();
+                    $user = $sql->select("SELECT * FROM usuario WHERE id_usuario = :id", array(
+                        ":id" => $id
+                    ));
+
+                    $_SESSION['user'] = $user[0];
+                    header("Location: my-account");
+                    $_SESSION['mensagem'] = "Cadastrado com sucesso";
+                } else {
+                    throw new \Exception('Erro ao cadastrar');
                 }
-            }catch(\Exception $e){
+            } catch (\Exception $e) {
                 echo $e->getMessage();
             }
-
+        }
     }
-
 }
-

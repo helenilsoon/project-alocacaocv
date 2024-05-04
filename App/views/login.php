@@ -86,7 +86,7 @@
                             <input type="submit" class="btn bg-gradiente px-5 " name="form_btn_login" value="Entrar">
                         </div>
                     </form>
-                    <small class=" d-flex justify-content-center py-2 mr-3"> <a href="cadastrar.php"> Cadastrar-se.</a>
+                    <small class=" d-flex justify-content-center py-2 mr-3"> <a href="cadastrar"> Cadastrar-se.</a>
                     </small>
                     <hr>
 

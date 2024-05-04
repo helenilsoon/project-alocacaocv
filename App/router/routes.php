@@ -3,7 +3,8 @@
 return [
     'POST'=>[
         $path ."login"=>'Login@signIn',
-        $path ."signUp"=>'Register@signUp'
+        $path ."signUp"=>'Register@signUp',
+        $path ."checkuser"=>'CheckUser@checkUserInView'
 
     ],
     'GET'=>[

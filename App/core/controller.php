@@ -4,10 +4,19 @@ function controller($foundUri,$params){
     
     $controller= array_values($foundUri)[0];
     [$controller,$method] = explode('@', $controller);
-    $controller = CONTROLLER_PATH. $controller;
+
+    if(class_exists(CONTROLLER_PATH.$controller)){
+        $controller = CONTROLLER_PATH. $controller;
+    }
+    if(class_exists(CONTROLLER_PATH_HELPERS.$controller)){
+        $controller = CONTROLLER_PATH_HELPERS. $controller;
+    }
+
+    // $controller = CONTROLLER_PATH. $controller;
    if(!class_exists($controller)){
     throw new Exception('Controller '.$controller.' not found');
    }
+
     $controllerInstace = new $controller;
     
     if(!method_exists($controllerInstace, $method)){
