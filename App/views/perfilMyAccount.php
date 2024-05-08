@@ -35,7 +35,7 @@ $(document).ready(function() {
             echo "<img width='150' src='".IMG_PATH.'userid'. $id_usuario . "/" . $img . "' alt=''>";
             echo "</div>";
         } else {
-            echo "<img width='150' src='img/solid/user-circle.svg' alt=''>";
+            echo "<img width='150' src='assets/img/solid/user-circle.svg' alt=''>";
         }
 
         ?>

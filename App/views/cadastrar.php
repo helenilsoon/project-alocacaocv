@@ -35,21 +35,21 @@ use app\helpers\Csrf;
                     </div>
                     <div class="form-group">
                         <label for="nome">Nome </label>
-                        <input type="text" class="form-control input-form" name="nome" id="nome" placeholder=" Nome" value="nilsonteste oliver" required>
+                        <input type="text" class="form-control input-form" name="nome" id="nome" placeholder=" Nome"  required>
                     </div>
                     <div class="form-group">
                         <label for="username">Username * </label>
-                        <input type="text" class="form-control input-form" name="username" id="username" placeholder=" Username" value="nilsonteste" required>
+                        <input type="text" class="form-control input-form" name="username" id="username" placeholder=" Username"  required>
                         <div id="user_exist"></div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email * </label>
-                        <input type="email" class="form-control input-form" name="email" id="email" placeholder=" seuemail@mail.com" required pattern="+@+" value="nilsonteste@teste.com">
+                        <input type="email" class="form-control input-form" name="email" id="email" placeholder=" seuemail@mail.com" required pattern="+@+" value="">
                         <div id="email_exist"></div>
                     </div>
                     <div class="form-group">
                         <label for="senha">Senha *</label>
-                        <input type="password" class="form-control input-form" name="senha" id="senha" placeholder="*************" value="nilsonteste">
+                        <input type="password" class="form-control input-form" name="senha" id="senha" placeholder="*************" >
                         <!--  <meter value="0" id="mtSenha" max="100"></meter>-->
                         <?php echo Csrf::createToken(); 
                         ?>

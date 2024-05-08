@@ -49,7 +49,7 @@
                 <img class="w-100" src="assets/img/arte-pg-inicial.png" alt="">
             </figure>
         </div>
-
+       
 
     </div>
 </div>
@@ -67,7 +67,7 @@
 
 
                 foreach ($data['getProfissao']  as $row) : ?>
-                    <a href='search.php?pesquisa=<?= $row['nome_profissao'] ?>&btn_procurar='>
+                    <a href='search?pesquisa=<?= $row['nome_profissao'] ?>&btn_procurar='>
                         <div class="estilo  " id="div1">
                             <div class="icon_profissionais">
                                 <img src="assets/icon/icones-profissoes/icon-profissao-<?= $row['icone'] ?>" alt="<?= $row['nome_profissao'] ?>">

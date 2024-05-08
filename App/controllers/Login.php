@@ -9,7 +9,7 @@ class Login
     public function index($params)
     {
 
-        dd(password_hash("82111971helenilsoon@gmail.com",PASSWORD_DEFAULT));
+        
         return[
             'view'=>'login.php',
             'title'=>'Login | webuild encontre profissionais gratuitamente',

@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
      <div class="row w-100">
         <div class=" col-xl-8 col-lg-7 col-md-7 mx-auto  d-flex justify-content-center ">
 
-            <form method="GET" action="search.php" id="procurar_profissional" class=" col-sm-12 col-md-12  form-inline ">
+            <form method="GET" action="search" id="procurar_profissional" class=" col-sm-12 col-md-12  form-inline ">
                 <span class="input-group-addon">
                     <input class="form-control   col-md-12 " type="search" id="search" name="pesquisa" placeholder="Qual profissional você precisa?" aria-label="Pesquisar " required>
 
