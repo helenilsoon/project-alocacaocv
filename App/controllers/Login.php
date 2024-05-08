@@ -8,6 +8,8 @@ class Login
 {
     public function index($params)
     {
+
+        
         return[
             'view'=>'login.php',
             'title'=>'Login | webuild encontre profissionais gratuitamente',
@@ -29,7 +31,7 @@ class Login
 
        if(count($res) > 0){
            $user = $res[0];
-           if(password_verify($password,$user['password'])){
+           if(password_verify($password.$email,$user['password'])){
            $_SESSION['user'] = $user;
             header("Location: my-account");
            }else{
@@ -42,15 +44,7 @@ class Login
        
        
     }
-    public function signUp($params)
-    {
-        return[
-            'view'=>'cadastrar.php',
-            'title'=>'Criar conta | webuild encontre profissionais gratuitamente',
-            'data'=>['name'=>'helenilson oliveira']
-          
-          ];
-    }
+    
     public function logout($params){
 
         unset($_SESSION['user']);

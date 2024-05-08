@@ -5,6 +5,7 @@ try{
  
     $data = router();
 
+   
     
     
      extract(isset($data['data']) ? $data['data']:[]);
@@ -25,5 +26,4 @@ try{
 }catch(Exception $e){
     echo $e->getMessage();
 }
-
 

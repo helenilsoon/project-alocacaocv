@@ -66,3 +66,14 @@ function show_backtrace_info() {
         echo "\n";
     }
 }
+
+function varsDefined($varDefined){
+    $varGlobals = ['_GET', '_POST', '_REQUEST', '_SESSION', '_ENV', '_COOKIE','_SERVER','_GLOBALS','_FILES'];
+   
+    $globalsClean  = array_diff_key($varDefined, array_flip($varGlobals));
+
+    ddArray($globalsClean);
+}
+
+
+

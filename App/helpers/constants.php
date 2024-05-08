@@ -3,6 +3,7 @@
 
 define("TESTE",'Ola helenilson welcome to webuild');
 define("CONTROLLER_PATH","app\\controllers\\");
+define("CONTROLLER_PATH_HELPERS","app\\helpers\\");
 define("ROOT",dirname(__FILE__,3));
 define("VIEW_PATH",ROOT.DIRECTORY_SEPARATOR."app".DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR);
 define("JS_PATH","/assets/js/");

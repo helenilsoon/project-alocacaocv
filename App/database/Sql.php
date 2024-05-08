@@ -14,6 +14,8 @@ namespace app\database;
  class Sql extends PDO
  {
  		private $conn;
+		private $rowCount;
+		private $lastInsertId ;
 
  	function __construct()
  	{
@@ -51,6 +53,8 @@ namespace app\database;
 			$stmt = $this->conn->prepare($rawQuery);
 			$this->setParams($stmt, $params);
 			$stmt->execute();
+			$this->setRowCount($stmt->rowCount());
+			$this->setLastInsertId($this->conn->lastInsertId());
 			return $stmt;
 
 		}catch(PDOException $e){
@@ -59,7 +63,22 @@ namespace app\database;
 
 
  	}
-
+	public function setRowCount($rowCount)
+	{
+		$this->rowCount = $rowCount;
+	}
+	public function getRowCount()
+	{
+		return $this->rowCount;
+	}
+	public function setLastInsertId($lastInsertId)
+	{
+		$this->lastInsertId = $lastInsertId;
+	}
+	public function getLastInsertId()
+	{
+		return $this->lastInsertId;
+	}
  	private function setParams($statement, $parameters = array()){
 
  			foreach ($parameters as $key => $value) {
