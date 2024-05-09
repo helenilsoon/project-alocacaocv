@@ -29,7 +29,7 @@ $_SESSION['token_perfil'] = $token;
               
                 <?php 
                       
-                require_once(VIEW_PATH.'/perfilMyaccount.php') ?>
+                require_once(VIEW_PATH.'perfilMyaccount.php') ?>
                 
                 <!--FIM MENU-->
             </div>
