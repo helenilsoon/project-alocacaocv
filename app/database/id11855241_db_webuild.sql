@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Abr-2024 às 00:56
+-- Tempo de geração: 08/05/2024 às 22:30
 -- Versão do servidor: 10.4.32-MariaDB
--- versão do PHP: 8.0.30
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `u925528732_webuild`
+-- Banco de dados: `id11855241_db_webuild`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `administradores`
+-- Estrutura para tabela `administradores`
 --
 
 CREATE TABLE `administradores` (
@@ -38,7 +38,7 @@ CREATE TABLE `administradores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `administradores`
+-- Despejando dados para a tabela `administradores`
 --
 
 INSERT INTO `administradores` (`id`, `nome`, `sobrenome`, `email`, `senha`, `ativo`, `tipo_user`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `administradores` (`id`, `nome`, `sobrenome`, `email`, `senha`, `ati
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `avaliacoes`
+-- Estrutura para tabela `avaliacoes`
 --
 
 CREATE TABLE `avaliacoes` (
@@ -59,7 +59,7 @@ CREATE TABLE `avaliacoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `avaliacoes`
+-- Despejando dados para a tabela `avaliacoes`
 --
 
 INSERT INTO `avaliacoes` (`id_avaliacoes`, `qnt_estrelas`, `criado`, `modificado`, `id_usuario`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `avaliacoes` (`id_avaliacoes`, `qnt_estrelas`, `criado`, `modificado
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria_profissoes`
+-- Estrutura para tabela `categoria_profissoes`
 --
 
 CREATE TABLE `categoria_profissoes` (
@@ -89,7 +89,7 @@ CREATE TABLE `categoria_profissoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `categoria_profissoes`
+-- Despejando dados para a tabela `categoria_profissoes`
 --
 
 INSERT INTO `categoria_profissoes` (`id_categoria_profissao`, `nomeprofissao`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `categoria_profissoes` (`id_categoria_profissao`, `nomeprofissao`) V
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria_servico`
+-- Estrutura para tabela `categoria_servico`
 --
 
 CREATE TABLE `categoria_servico` (
@@ -107,7 +107,7 @@ CREATE TABLE `categoria_servico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `categoria_servico`
+-- Despejando dados para a tabela `categoria_servico`
 --
 
 INSERT INTO `categoria_servico` (`idcategoria_servico`, `nome_categoria_servico`) VALUES
@@ -145,32 +145,282 @@ INSERT INTO `categoria_servico` (`idcategoria_servico`, `nome_categoria_servico`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `endereco`
+-- Estrutura para tabela `endereco`
 --
 
 CREATE TABLE `endereco` (
   `id_endereco` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `cep` int(15) DEFAULT NULL,
-  `rua` varchar(45) NOT NULL DEFAULT '',
-  `complemento` varchar(45) NOT NULL DEFAULT '',
-  `bairro` varchar(45) NOT NULL DEFAULT '',
+  `rua` varchar(45) DEFAULT '',
+  `complemento` varchar(45) DEFAULT '',
+  `bairro` varchar(45) DEFAULT '',
   `municipio` varchar(45) DEFAULT NULL,
   `estado` varchar(45) DEFAULT NULL,
   `uf` char(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `endereco`
+-- Despejando dados para a tabela `endereco`
 --
 
 INSERT INTO `endereco` (`id_endereco`, `id_usuario`, `cep`, `rua`, `complemento`, `bairro`, `municipio`, `estado`, `uf`) VALUES
-(1, 1, 69087451, 'Santa rita 02', '', 'Tancredo', 'Manaus', 'AM', NULL);
+(1, 1, 69087451, 'Santa rita 02', '', 'Tancredo', 'Manaus', 'AM', NULL),
+(2, 3, NULL, '', '', 'petropoles', NULL, NULL, NULL),
+(3, 2, NULL, '', '', 'Adrianópolis', NULL, NULL, NULL),
+(4, 3, NULL, '', '', 'Aleixo', NULL, NULL, NULL),
+(5, 4, NULL, '', '', 'Alvorada', NULL, NULL, NULL),
+(6, 5, NULL, '', '', 'Armando Mendes', NULL, NULL, NULL),
+(7, 6, NULL, '', '', 'Betânia', NULL, NULL, NULL),
+(8, 7, NULL, '', '', 'Cachoeirinha', NULL, NULL, NULL),
+(9, 8, NULL, '', '', 'Centro', NULL, NULL, NULL),
+(10, 9, NULL, '', '', 'Chapada', NULL, NULL, NULL),
+(11, 10, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(12, 11, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(13, 12, NULL, '', '', 'Colônia', NULL, NULL, NULL),
+(14, 13, NULL, '', '', 'Colônia Oliveira Machado', NULL, NULL, NULL),
+(15, 14, NULL, '', '', 'Colônia Santo Antônio', NULL, NULL, NULL),
+(16, 15, NULL, '', '', 'Colônia Terra Nova', NULL, NULL, NULL),
+(17, 16, NULL, '', '', 'Compensa', NULL, NULL, NULL),
+(18, 17, NULL, '', '', 'Coroado', NULL, NULL, NULL),
+(19, 18, NULL, '', '', 'Crespo', NULL, NULL, NULL),
+(20, 19, NULL, '', '', 'Da Paz', NULL, NULL, NULL),
+(21, 20, NULL, '', '', 'Distrito Industrial I', NULL, NULL, NULL),
+(22, 21, NULL, '', '', 'Distrito Industrial II', NULL, NULL, NULL),
+(23, 22, NULL, '', '', 'Dom Pedro', NULL, NULL, NULL),
+(24, 23, NULL, '', '', 'Educandos', NULL, NULL, NULL),
+(25, 24, NULL, '', '', 'Flores	Centro', NULL, NULL, NULL),
+(26, 25, NULL, '', '', 'Gilberto Mestrinho', NULL, NULL, NULL),
+(27, 26, NULL, '', '', 'Glória', NULL, NULL, NULL),
+(28, 27, NULL, '', '', 'Japiim', NULL, NULL, NULL),
+(29, 28, NULL, '', '', 'Jorge Teixeira', NULL, NULL, NULL),
+(30, 29, NULL, '', '', 'Lago Azul', NULL, NULL, NULL),
+(31, 30, NULL, '', '', 'Lírio do Vale', NULL, NULL, NULL),
+(32, 31, NULL, '', '', 'Mauazinho', NULL, NULL, NULL),
+(33, 32, NULL, '', '', 'Monte das Oliveiras', NULL, NULL, NULL),
+(34, 33, NULL, '', '', 'Morro da Liberdade', NULL, NULL, NULL),
+(35, 34, NULL, '', '', 'Nossa Senhora Aparecida', NULL, NULL, NULL),
+(36, 35, NULL, '', '', 'Nossa Senhora das Graças	Centro', NULL, NULL, NULL),
+(37, 36, NULL, '', '', 'Nova Cidade', NULL, NULL, NULL),
+(38, 37, NULL, '', '', 'Nova Esperança', NULL, NULL, NULL),
+(39, 38, NULL, '', '', 'Novo Aleixo', NULL, NULL, NULL),
+(40, 39, NULL, '', '', 'Novo Israel', NULL, NULL, NULL),
+(41, 40, NULL, '', '', 'Parque 10 de Novembro	Centro', NULL, NULL, NULL),
+(42, 41, NULL, '', '', 'Petrópolis', NULL, NULL, NULL),
+(43, 42, NULL, '', '', 'Planalto', NULL, NULL, NULL),
+(44, 43, NULL, '', '', 'Ponta Negra', NULL, NULL, NULL),
+(45, 44, NULL, '', '', 'Praça 14 de Janeiro', NULL, NULL, NULL),
+(46, 45, NULL, '', '', 'Presidente Vargas', NULL, NULL, NULL),
+(47, 46, NULL, '', '', 'Puraquequara', NULL, NULL, NULL),
+(48, 47, NULL, '', '', 'Raiz', NULL, NULL, NULL),
+(49, 48, NULL, '', '', 'Redenção', NULL, NULL, NULL),
+(50, 49, NULL, '', '', 'Santa Etelvina', NULL, NULL, NULL),
+(51, 50, NULL, '', '', 'Santa Luzia', NULL, NULL, NULL),
+(52, 51, NULL, '', '', 'Santo Agostinho', NULL, NULL, NULL),
+(53, 52, NULL, '', '', 'Santo Antônio', NULL, NULL, NULL),
+(54, 53, NULL, '', '', 'São Francisco', NULL, NULL, NULL),
+(55, 54, NULL, '', '', 'São Geraldo	Centro', NULL, NULL, NULL),
+(56, 55, NULL, '', '', 'São Jorge', NULL, NULL, NULL),
+(57, 56, NULL, '', '', 'São José Operário', NULL, NULL, NULL),
+(58, 57, NULL, '', '', 'São Lázaro', NULL, NULL, NULL),
+(59, 58, NULL, '', '', 'São Raimundo', NULL, NULL, NULL),
+(60, 59, NULL, '', '', 'Tancredo Neves', NULL, NULL, NULL),
+(61, 60, NULL, '', '', 'Tarumã', NULL, NULL, NULL),
+(62, 61, NULL, '', '', 'Tarumã-Açu', NULL, NULL, NULL),
+(63, 62, NULL, '', '', 'Vila Buriti', NULL, NULL, NULL),
+(64, 63, NULL, '', '', 'Vila da Prata', NULL, NULL, NULL),
+(65, 64, NULL, '', '', 'Adrianópolis', NULL, NULL, NULL),
+(66, 65, NULL, '', '', 'Aleixo', NULL, NULL, NULL),
+(67, 66, NULL, '', '', 'Alvorada', NULL, NULL, NULL),
+(68, 67, NULL, '', '', 'Armando Mendes', NULL, NULL, NULL),
+(69, 68, NULL, '', '', 'Betânia', NULL, NULL, NULL),
+(70, 69, NULL, '', '', 'Cachoeirinha', NULL, NULL, NULL),
+(71, 70, NULL, '', '', 'Centro', NULL, NULL, NULL),
+(72, 71, NULL, '', '', 'Chapada', NULL, NULL, NULL),
+(73, 72, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(74, 73, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(75, 74, NULL, '', '', 'Colônia', NULL, NULL, NULL),
+(76, 75, NULL, '', '', 'Colônia Oliveira Machado', NULL, NULL, NULL),
+(77, 76, NULL, '', '', 'Colônia Santo Antônio', NULL, NULL, NULL),
+(78, 77, NULL, '', '', 'Colônia Terra Nova', NULL, NULL, NULL),
+(79, 78, NULL, '', '', 'Compensa', NULL, NULL, NULL),
+(80, 79, NULL, '', '', 'Coroado', NULL, NULL, NULL),
+(81, 80, NULL, '', '', 'Crespo', NULL, NULL, NULL),
+(82, 81, NULL, '', '', 'Da Paz', NULL, NULL, NULL),
+(83, 82, NULL, '', '', 'Distrito Industrial I', NULL, NULL, NULL),
+(84, 83, NULL, '', '', 'Distrito Industrial II', NULL, NULL, NULL),
+(85, 84, NULL, '', '', 'Dom Pedro', NULL, NULL, NULL),
+(86, 85, NULL, '', '', 'Educandos', NULL, NULL, NULL),
+(87, 86, NULL, '', '', 'Flores	Centro', NULL, NULL, NULL),
+(88, 87, NULL, '', '', 'Gilberto Mestrinho', NULL, NULL, NULL),
+(89, 88, NULL, '', '', 'Glória', NULL, NULL, NULL),
+(90, 89, NULL, '', '', 'Japiim', NULL, NULL, NULL),
+(91, 90, NULL, '', '', 'Jorge Teixeira', NULL, NULL, NULL),
+(92, 91, NULL, '', '', 'Lago Azul', NULL, NULL, NULL),
+(93, 92, NULL, '', '', 'Lírio do Vale', NULL, NULL, NULL),
+(94, 93, NULL, '', '', 'Mauazinho', NULL, NULL, NULL),
+(95, 94, NULL, '', '', 'Monte das Oliveiras', NULL, NULL, NULL),
+(96, 95, NULL, '', '', 'Morro da Liberdade', NULL, NULL, NULL),
+(97, 96, NULL, '', '', 'Nossa Senhora Aparecida', NULL, NULL, NULL),
+(98, 97, NULL, '', '', 'Nossa Senhora das Graças	Centro', NULL, NULL, NULL),
+(99, 98, NULL, '', '', 'Nova Cidade', NULL, NULL, NULL),
+(100, 99, NULL, '', '', 'Nova Esperança', NULL, NULL, NULL),
+(101, 100, NULL, '', '', 'Novo Aleixo', NULL, NULL, NULL),
+(102, 101, NULL, '', '', 'Novo Israel', NULL, NULL, NULL),
+(103, 102, NULL, '', '', 'Parque 10 de Novembro	Centro', NULL, NULL, NULL),
+(104, 103, NULL, '', '', 'Petrópolis', NULL, NULL, NULL),
+(105, 104, NULL, '', '', 'Planalto', NULL, NULL, NULL),
+(106, 105, NULL, '', '', 'Ponta Negra', NULL, NULL, NULL),
+(107, 106, NULL, '', '', 'Praça 14 de Janeiro', NULL, NULL, NULL),
+(108, 107, NULL, '', '', 'Presidente Vargas', NULL, NULL, NULL),
+(109, 108, NULL, '', '', 'Puraquequara', NULL, NULL, NULL),
+(110, 109, NULL, '', '', 'Raiz', NULL, NULL, NULL),
+(111, 110, NULL, '', '', 'Redenção', NULL, NULL, NULL),
+(112, 111, NULL, '', '', 'Santa Etelvina', NULL, NULL, NULL),
+(113, 112, NULL, '', '', 'Santa Luzia', NULL, NULL, NULL),
+(114, 113, NULL, '', '', 'Santo Agostinho', NULL, NULL, NULL),
+(115, 114, NULL, '', '', 'Santo Antônio', NULL, NULL, NULL),
+(116, 115, NULL, '', '', 'São Francisco', NULL, NULL, NULL),
+(117, 116, NULL, '', '', 'São Geraldo	Centro', NULL, NULL, NULL),
+(118, 117, NULL, '', '', 'São Jorge', NULL, NULL, NULL),
+(119, 118, NULL, '', '', 'São José Operário', NULL, NULL, NULL),
+(120, 119, NULL, '', '', 'São Lázaro', NULL, NULL, NULL),
+(121, 120, NULL, '', '', 'São Raimundo', NULL, NULL, NULL),
+(122, 121, NULL, '', '', 'Tancredo Neves', NULL, NULL, NULL),
+(123, 122, NULL, '', '', 'Tarumã', NULL, NULL, NULL),
+(124, 123, NULL, '', '', 'Tarumã-Açu', NULL, NULL, NULL),
+(125, 124, NULL, '', '', 'Vila Buriti', NULL, NULL, NULL),
+(126, 125, NULL, '', '', 'Vila da Prata', NULL, NULL, NULL),
+(127, 126, NULL, '', '', 'Adrianópolis', NULL, NULL, NULL),
+(128, 127, NULL, '', '', 'Aleixo', NULL, NULL, NULL),
+(129, 128, NULL, '', '', 'Alvorada', NULL, NULL, NULL),
+(130, 129, NULL, '', '', 'Armando Mendes', NULL, NULL, NULL),
+(131, 130, NULL, '', '', 'Betânia', NULL, NULL, NULL),
+(132, 131, NULL, '', '', 'Cachoeirinha', NULL, NULL, NULL),
+(133, 132, NULL, '', '', 'Centro', NULL, NULL, NULL),
+(134, 133, NULL, '', '', 'Chapada', NULL, NULL, NULL),
+(135, 134, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(136, 135, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(137, 136, NULL, '', '', 'Colônia', NULL, NULL, NULL),
+(138, 137, NULL, '', '', 'Colônia Oliveira Machado', NULL, NULL, NULL),
+(139, 138, NULL, '', '', 'Colônia Santo Antônio', NULL, NULL, NULL),
+(140, 139, NULL, '', '', 'Colônia Terra Nova', NULL, NULL, NULL),
+(141, 140, NULL, '', '', 'Compensa', NULL, NULL, NULL),
+(142, 141, NULL, '', '', 'Coroado', NULL, NULL, NULL),
+(143, 142, NULL, '', '', 'Crespo', NULL, NULL, NULL),
+(144, 143, NULL, '', '', 'Da Paz', NULL, NULL, NULL),
+(145, 144, NULL, '', '', 'Distrito Industrial I', NULL, NULL, NULL),
+(146, 145, NULL, '', '', 'Distrito Industrial II', NULL, NULL, NULL),
+(147, 146, NULL, '', '', 'Dom Pedro', NULL, NULL, NULL),
+(148, 147, NULL, '', '', 'Educandos', NULL, NULL, NULL),
+(149, 148, NULL, '', '', 'Flores	Centro', NULL, NULL, NULL),
+(150, 149, NULL, '', '', 'Gilberto Mestrinho', NULL, NULL, NULL),
+(151, 150, NULL, '', '', 'Glória', NULL, NULL, NULL),
+(152, 151, NULL, '', '', 'Japiim', NULL, NULL, NULL),
+(153, 152, NULL, '', '', 'Jorge Teixeira', NULL, NULL, NULL),
+(154, 153, NULL, '', '', 'Lago Azul', NULL, NULL, NULL),
+(155, 154, NULL, '', '', 'Lírio do Vale', NULL, NULL, NULL),
+(156, 155, NULL, '', '', 'Mauazinho', NULL, NULL, NULL),
+(157, 156, NULL, '', '', 'Monte das Oliveiras', NULL, NULL, NULL),
+(158, 157, NULL, '', '', 'Morro da Liberdade', NULL, NULL, NULL),
+(159, 158, NULL, '', '', 'Nossa Senhora Aparecida', NULL, NULL, NULL),
+(160, 159, NULL, '', '', 'Nossa Senhora das Graças	Centro', NULL, NULL, NULL),
+(161, 160, NULL, '', '', 'Nova Cidade', NULL, NULL, NULL),
+(162, 161, NULL, '', '', 'Nova Esperança', NULL, NULL, NULL),
+(163, 162, NULL, '', '', 'Novo Aleixo', NULL, NULL, NULL),
+(164, 163, NULL, '', '', 'Novo Israel', NULL, NULL, NULL),
+(165, 164, NULL, '', '', 'Parque 10 de Novembro	Centro', NULL, NULL, NULL),
+(166, 165, NULL, '', '', 'Petrópolis', NULL, NULL, NULL),
+(167, 166, NULL, '', '', 'Planalto', NULL, NULL, NULL),
+(168, 167, NULL, '', '', 'Ponta Negra', NULL, NULL, NULL),
+(169, 168, NULL, '', '', 'Praça 14 de Janeiro', NULL, NULL, NULL),
+(170, 169, NULL, '', '', 'Presidente Vargas', NULL, NULL, NULL),
+(171, 170, NULL, '', '', 'Puraquequara', NULL, NULL, NULL),
+(172, 171, NULL, '', '', 'Raiz', NULL, NULL, NULL),
+(173, 172, NULL, '', '', 'Redenção', NULL, NULL, NULL),
+(174, 173, NULL, '', '', 'Santa Etelvina', NULL, NULL, NULL),
+(175, 174, NULL, '', '', 'Santa Luzia', NULL, NULL, NULL),
+(176, 175, NULL, '', '', 'Santo Agostinho', NULL, NULL, NULL),
+(177, 176, NULL, '', '', 'Santo Antônio', NULL, NULL, NULL),
+(178, 177, NULL, '', '', 'São Francisco', NULL, NULL, NULL),
+(179, 178, NULL, '', '', 'São Geraldo	Centro', NULL, NULL, NULL),
+(180, 179, NULL, '', '', 'São Jorge', NULL, NULL, NULL),
+(181, 180, NULL, '', '', 'São José Operário', NULL, NULL, NULL),
+(182, 181, NULL, '', '', 'São Lázaro', NULL, NULL, NULL),
+(183, 182, NULL, '', '', 'São Raimundo', NULL, NULL, NULL),
+(184, 183, NULL, '', '', 'Tancredo Neves', NULL, NULL, NULL),
+(185, 184, NULL, '', '', 'Tarumã', NULL, NULL, NULL),
+(186, 185, NULL, '', '', 'Tarumã-Açu', NULL, NULL, NULL),
+(187, 186, NULL, '', '', 'Vila Buriti', NULL, NULL, NULL),
+(188, 187, NULL, '', '', 'Vila da Prata', NULL, NULL, NULL),
+(189, 188, NULL, '', '', 'Adrianópolis', NULL, NULL, NULL),
+(190, 189, NULL, '', '', 'Aleixo', NULL, NULL, NULL),
+(191, 190, NULL, '', '', 'Alvorada', NULL, NULL, NULL),
+(192, 191, NULL, '', '', 'Armando Mendes', NULL, NULL, NULL),
+(193, 192, NULL, '', '', 'Betânia', NULL, NULL, NULL),
+(194, 193, NULL, '', '', 'Cachoeirinha', NULL, NULL, NULL),
+(195, 194, NULL, '', '', 'Centro', NULL, NULL, NULL),
+(196, 195, NULL, '', '', 'Chapada', NULL, NULL, NULL),
+(197, 196, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(198, 197, NULL, '', '', 'Cidade', NULL, NULL, NULL),
+(199, 198, NULL, '', '', 'Colônia', NULL, NULL, NULL),
+(200, 199, NULL, '', '', 'Colônia Oliveira Machado', NULL, NULL, NULL),
+(201, 200, NULL, '', '', 'Colônia Santo Antônio', NULL, NULL, NULL),
+(202, 201, NULL, '', '', 'Colônia Terra Nova', NULL, NULL, NULL),
+(203, 202, NULL, '', '', 'Compensa', NULL, NULL, NULL),
+(204, 203, NULL, '', '', 'Coroado', NULL, NULL, NULL),
+(205, 204, NULL, '', '', 'Crespo', NULL, NULL, NULL),
+(206, 205, NULL, '', '', 'Da Paz', NULL, NULL, NULL),
+(207, 206, NULL, '', '', 'Distrito Industrial I', NULL, NULL, NULL),
+(208, 207, NULL, '', '', 'Distrito Industrial II', NULL, NULL, NULL),
+(209, 208, NULL, '', '', 'Dom Pedro', NULL, NULL, NULL),
+(210, 209, NULL, '', '', 'Educandos', NULL, NULL, NULL),
+(211, 210, NULL, '', '', 'Flores	Centro', NULL, NULL, NULL),
+(212, 211, NULL, '', '', 'Gilberto Mestrinho', NULL, NULL, NULL),
+(213, 212, NULL, '', '', 'Glória', NULL, NULL, NULL),
+(214, 213, NULL, '', '', 'Japiim', NULL, NULL, NULL),
+(215, 214, NULL, '', '', 'Jorge Teixeira', NULL, NULL, NULL),
+(216, 215, NULL, '', '', 'Lago Azul', NULL, NULL, NULL),
+(217, 216, NULL, '', '', 'Lírio do Vale', NULL, NULL, NULL),
+(218, 217, NULL, '', '', 'Mauazinho', NULL, NULL, NULL),
+(219, 218, NULL, '', '', 'Monte das Oliveiras', NULL, NULL, NULL),
+(220, 219, NULL, '', '', 'Morro da Liberdade', NULL, NULL, NULL),
+(221, 220, NULL, '', '', 'Nossa Senhora Aparecida', NULL, NULL, NULL),
+(222, 221, NULL, '', '', 'Nossa Senhora das Graças	Centro', NULL, NULL, NULL),
+(223, 222, NULL, '', '', 'Nova Cidade', NULL, NULL, NULL),
+(224, 223, NULL, '', '', 'Nova Esperança', NULL, NULL, NULL),
+(225, 224, NULL, '', '', 'Novo Aleixo', NULL, NULL, NULL),
+(226, 225, NULL, '', '', 'Novo Israel', NULL, NULL, NULL),
+(227, 226, NULL, '', '', 'Parque 10 de Novembro	Centro', NULL, NULL, NULL),
+(228, 227, NULL, '', '', 'Petrópolis', NULL, NULL, NULL),
+(229, 228, NULL, '', '', 'Planalto', NULL, NULL, NULL),
+(230, 229, NULL, '', '', 'Ponta Negra', NULL, NULL, NULL),
+(231, 230, NULL, '', '', 'Praça 14 de Janeiro', NULL, NULL, NULL),
+(232, 231, NULL, '', '', 'Presidente Vargas', NULL, NULL, NULL),
+(233, 232, NULL, '', '', 'Puraquequara', NULL, NULL, NULL),
+(234, 233, NULL, '', '', 'Raiz', NULL, NULL, NULL),
+(235, 234, NULL, '', '', 'Redenção', NULL, NULL, NULL),
+(236, 235, NULL, '', '', 'Santa Etelvina', NULL, NULL, NULL),
+(237, 236, NULL, '', '', 'Santa Luzia', NULL, NULL, NULL),
+(238, 237, NULL, '', '', 'Santo Agostinho', NULL, NULL, NULL),
+(239, 238, NULL, '', '', 'Santo Antônio', NULL, NULL, NULL),
+(240, 239, NULL, '', '', 'São Francisco', NULL, NULL, NULL),
+(241, 240, NULL, '', '', 'São Geraldo	Centro', NULL, NULL, NULL),
+(242, 241, NULL, '', '', 'São Jorge', NULL, NULL, NULL),
+(243, 242, NULL, '', '', 'São José Operário', NULL, NULL, NULL),
+(244, 243, NULL, '', '', 'São Lázaro', NULL, NULL, NULL),
+(245, 244, NULL, '', '', 'São Raimundo', NULL, NULL, NULL),
+(246, 245, NULL, '', '', 'Tancredo Neves', NULL, NULL, NULL),
+(247, 246, NULL, '', '', 'Tarumã', NULL, NULL, NULL),
+(248, 247, NULL, '', '', 'Tarumã-Açu', NULL, NULL, NULL),
+(249, 248, NULL, '', '', 'Vila Buriti', NULL, NULL, NULL),
+(250, 249, NULL, '', '', 'Vila da Prata', NULL, NULL, NULL),
+(251, 250, NULL, '', '', 'Adrianópolis', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `estados`
+-- Estrutura para tabela `estados`
 --
 
 CREATE TABLE `estados` (
@@ -181,7 +431,7 @@ CREATE TABLE `estados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `estados`
+-- Despejando dados para a tabela `estados`
 --
 
 INSERT INTO `estados` (`id`, `nome_estado`, `sigla`, `Pais_idPais`) VALUES
@@ -190,7 +440,7 @@ INSERT INTO `estados` (`id`, `nome_estado`, `sigla`, `Pais_idPais`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `newsletter`
+-- Estrutura para tabela `newsletter`
 --
 
 CREATE TABLE `newsletter` (
@@ -203,7 +453,7 @@ CREATE TABLE `newsletter` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pais`
+-- Estrutura para tabela `pais`
 --
 
 CREATE TABLE `pais` (
@@ -213,7 +463,7 @@ CREATE TABLE `pais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `pais`
+-- Despejando dados para a tabela `pais`
 --
 
 INSERT INTO `pais` (`idPais`, `nome_pais`, `sigla`) VALUES
@@ -222,7 +472,7 @@ INSERT INTO `pais` (`idPais`, `nome_pais`, `sigla`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `profissoes`
+-- Estrutura para tabela `profissoes`
 --
 
 CREATE TABLE `profissoes` (
@@ -233,7 +483,7 @@ CREATE TABLE `profissoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `profissoes`
+-- Despejando dados para a tabela `profissoes`
 --
 
 INSERT INTO `profissoes` (`id_profissoes`, `nome_profissao`, `descricao`, `icone`) VALUES
@@ -241,7 +491,7 @@ INSERT INTO `profissoes` (`id_profissoes`, `nome_profissao`, `descricao`, `icone
 (2, 'Engenheiro Civil', 'O engenheiro civil projeta, gerencia e executa reformas e construções. Ele é o responsável por implementar o que foi planejado pelo arquiteto, fazendo os cálculos estruturais, a análise do solo, supervisionando e gerenciando equipes, emitindo laudos e pareceres técnicos. É ainda quem calcula, a estabilidade e a segurança de uma construção.', 'Engenheiro_servente.svg'),
 (3, 'Mestre de Obras', 'É o porta-voz da obra. Ele é o responsável pela fiscalização, do início ao fim. Por isso, ele precisa ter um bom conhecimento de todas as etapas da obra, filtrando os problemas antes que cheguem à equipe de engenharia.\n\nÉ ele quem distribui os serviços, coordena as equipes, faz o controle dos materiais utilizados e acompanha o cronograma de entrega do empreendimento.', 'mestre_de_obra.svg'),
 (4, 'Pedreiro', 'O pedreiro é o que põe a mão na massa e pode realizar diferentes tipos de serviços: alvenaria, concretagem, pilares, assentamentos, revestimentos, piso, contra-piso, chapisco, emboço, requadramento de portas e janelas etc.', 'pedreiro.svg'),
-(5, 'Técnico\nem\nEdificações', 'Profissional de nível médio, ele é o braço direito do Engenheiro e do Arquiteto. O técnico em edificações atua no desenvolvimento e execução de obras residenciais, comerciais e industriais.', 'tecnico_edificacoes.svg'),
+(5, 'Tecnico em edificações', 'Profissional de nível médio, ele é o braço direito do Engenheiro e do Arquiteto. O técnico em edificações atua no desenvolvimento e execução de obras residenciais, comerciais e industriais.', 'tecnico_edificacoes.svg'),
 (6, 'Armador', 'É responsável pela ferragem da obra. O armador interpreta dados básicos do projeto de uma edificação no que se refere a tamanho, arranjo e posição das armaduras.', 'malha.png'),
 (7, 'Carpinteiro', 'É responsável pela ferragem da obra. O armador interpreta dados básicos do projeto de uma edificação no que se refere a tamanho, arranjo e posição das armaduras.\n\n', 'carpinteiro.svg'),
 (8, 'Gesseiro', 'Ele atua na obra na fase de revestimentos e acabamentos. Esse é o profissional que prepara o local e aplica o acabamento em gesso, da parede ao teto.', 'Gessero.svg'),
@@ -258,7 +508,7 @@ INSERT INTO `profissoes` (`id_profissoes`, `nome_profissao`, `descricao`, `icone
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `servico`
+-- Estrutura para tabela `servico`
 --
 
 CREATE TABLE `servico` (
@@ -271,7 +521,7 @@ CREATE TABLE `servico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_cidades`
+-- Estrutura para tabela `tb_cidades`
 --
 
 CREATE TABLE `tb_cidades` (
@@ -282,7 +532,7 @@ CREATE TABLE `tb_cidades` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Extraindo dados da tabela `tb_cidades`
+-- Despejando dados para a tabela `tb_cidades`
 --
 
 INSERT INTO `tb_cidades` (`id`, `estado`, `uf`, `nome`) VALUES
@@ -10010,7 +10260,7 @@ INSERT INTO `tb_cidades` (`id`, `estado`, `uf`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_estados`
+-- Estrutura para tabela `tb_estados`
 --
 
 CREATE TABLE `tb_estados` (
@@ -10020,7 +10270,7 @@ CREATE TABLE `tb_estados` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Extraindo dados da tabela `tb_estados`
+-- Despejando dados para a tabela `tb_estados`
 --
 
 INSERT INTO `tb_estados` (`id`, `uf`, `nome`) VALUES
@@ -10055,7 +10305,7 @@ INSERT INTO `tb_estados` (`id`, `uf`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_pessoas`
+-- Estrutura para tabela `tb_pessoas`
 --
 
 CREATE TABLE `tb_pessoas` (
@@ -10068,7 +10318,7 @@ CREATE TABLE `tb_pessoas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tb_pessoas`
+-- Despejando dados para a tabela `tb_pessoas`
 --
 
 INSERT INTO `tb_pessoas` (`id`, `nome`, `idade`, `interesse`, `email`, `estado`) VALUES
@@ -10176,13 +10426,13 @@ INSERT INTO `tb_pessoas` (`id`, `nome`, `idade`, `interesse`, `email`, `estado`)
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `CPF` bigint(14) NOT NULL DEFAULT 0,
-  `nome` varchar(20) NOT NULL DEFAULT '',
+  `nome` varchar(100) NOT NULL DEFAULT '',
   `sobrenome` varchar(30) NOT NULL DEFAULT '',
   `img` varchar(100) DEFAULT NULL,
   `sexo` char(2) DEFAULT NULL,
@@ -10190,10 +10440,10 @@ CREATE TABLE `usuario` (
   `CEL` bigint(14) NOT NULL DEFAULT 0,
   `TEL` bigint(14) NOT NULL DEFAULT 0,
   `sobre` text DEFAULT NULL,
-  `email` varchar(30) NOT NULL,
-  `username` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `profissao` varchar(45) NOT NULL DEFAULT '',
-  `password` varchar(32) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `experiencia` varchar(250) DEFAULT NULL,
   `data_cadastro` datetime NOT NULL DEFAULT current_timestamp(),
   `last_pass_gen` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -10202,11 +10452,11 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, `data_nascimento`, `CEL`, `TEL`, `sobre`, `email`, `username`, `profissao`, `password`, `experiencia`, `data_cadastro`, `last_pass_gen`, `ativo`, `tipo_usuario`) VALUES
-(1, 98249606272, 'helenilson', '', '197d55303d7fed8be60647ed5224386b7.jpg', NULL, '1988-10-10', 981876515, 36814361, NULL, 'helenilsoon@gmail.com', 'helenilsoon', 'Programador', '1d1d468b320b091c5b689cc73b77a87f', NULL, '1988-02-02 00:00:00', '1988-02-02 03:00:00', 1, 0),
+(1, 98249606272, 'helenilson', 'oliveira', '197d55303d7fed8be60647ed5224386b7.jpg', 'M', '1988-10-10', 981876515, 36814361, 'Ola sou programador back end PHP', 'helenilsoon@gmail.com', 'helenilsoon', ' beck-end', '$2y$10$.WIkOgP3lMSzdBdnQcgU3e.GPeljP.lJBZB93mXDkzpUUiWpjcOB2', '5 anos de experiencia em programação php', '1988-02-02 00:00:00', '1988-02-02 03:00:00', 1, 0),
 (2, 0, 'alexandre', '', '', NULL, '1984-10-09', 0, 0, NULL, '@gmail.com', '', 'Encanador', '', NULL, '2019-12-02 00:06:13', '2019-12-02 04:06:13', 0, 0),
 (3, 0, 'ABELARDO ', '', '', 'M', '1984-10-09', 0, 0, NULL, '@gmail.com', '', 'Encanador', '', NULL, '2019-12-02 14:21:55', '2019-12-02 18:21:55', 0, 0),
 (4, 0, 'ABILIO ', '', '', 'M', '1984-10-09', 0, 0, NULL, '@gmail.com', '', 'Encanador', '', NULL, '2019-12-02 14:21:55', '2019-12-02 18:21:55', 0, 0),
@@ -10264,16 +10514,16 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (56, 0, 'ADOLFO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
 (57, 0, 'ADONIAS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
 (58, 0, 'ADONIL ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(59, 0, 'ADRIAN ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(60, 0, 'ADRIANO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(61, 0, 'AÉCIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(62, 0, 'AFLAUDIZIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(63, 0, 'AFONSO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(64, 0, 'AFRÂNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(65, 0, 'AGARB ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(66, 0, 'AGENOR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(67, 0, 'AGILSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
-(68, 0, 'AGNALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(59, 0, 'ADRIAN ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(60, 0, 'ADRIANO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(61, 0, 'AÉCIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(62, 0, 'AFLAUDIZIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(63, 0, 'AFONSO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(64, 0, 'AFRÂNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(65, 0, 'AGARB ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(66, 0, 'AGENOR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(67, 0, 'AGILSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
+(68, 0, 'AGNALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Ajudante ou servente', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
 (69, 0, 'AGNELO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
 (70, 0, 'AGOSTINHO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
 (71, 0, 'AGUINALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pintor', '', NULL, '2019-12-02 14:24:04', '2019-12-02 18:24:04', 0, 0),
@@ -10317,7 +10567,7 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (109, 0, 'ALEXANDRO ', '', '', '', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (110, 0, 'ALEXEI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (111, 0, 'ALEXINALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(112, 0, 'ALEXIS ', '', '', 'M', '2019-12-17', 0, 0, NULL, '@gmail.com', '', ' Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(112, 0, 'ALEXIS ', '', '', 'M', '2019-12-17', 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (113, 0, 'ALEXSANDER ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (114, 0, 'ALEXSANDRO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (115, 0, 'ALFREDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
@@ -10327,43 +10577,43 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (119, 0, 'ALLAN ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (120, 0, 'ALLYSSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Civil', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (121, 0, 'ALMEIDA ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(122, 0, 'ALMIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(123, 0, 'ALOISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(124, 0, 'ALOIZIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(125, 0, 'ALTAFINI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(126, 0, 'ALTAIDE ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(127, 0, 'ALTAIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(128, 0, 'ALTAMIRO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(129, 0, 'ALTAVIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(130, 0, 'ALTEMAR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(131, 0, 'ALTEVI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(132, 0, 'ALTEVIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(133, 0, 'ALTIVANIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(134, 0, 'ALUISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(135, 0, 'ALUÍSIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(136, 0, 'ALVACIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(122, 0, 'ALMIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Mestre de Obras', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(123, 0, 'ALOISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Mestre de Obras', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(124, 0, 'ALOIZIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Mestre de Obras', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(125, 0, 'ALTAFINI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Mestre de Obras', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(126, 0, 'ALTAIDE ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Mestre de Obras', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(127, 0, 'ALTAIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(128, 0, 'ALTAMIRO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(129, 0, 'ALTAVIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(130, 0, 'ALTEMAR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(131, 0, 'ALTEVI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(132, 0, 'ALTEVIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(133, 0, 'ALTIVANIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(134, 0, 'ALUISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(135, 0, 'ALUÍSIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Soldadores', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(136, 0, 'ALVACIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Arquiteto', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (137, 0, 'ALVARO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (138, 0, 'ÁLVARO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (139, 0, 'ALYSSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(140, 0, 'ALZI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(141, 0, 'ALZIRO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(140, 0, 'ALZI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Arquiteto', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(141, 0, 'ALZIRO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Arquiteto', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (142, 0, 'AMADEU ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(143, 0, 'AMADEUS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(144, 0, 'AMANCIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(145, 0, 'AMANDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(146, 0, 'AMARAI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(147, 0, 'AMARILDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(148, 0, 'AMARO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(149, 0, 'AMAURI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(150, 0, 'AMAURY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(151, 0, 'AMERICO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(152, 0, 'AMÉRICO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(143, 0, 'AMADEUS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Arquiteto', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(144, 0, 'AMANCIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(145, 0, 'AMANDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(146, 0, 'AMARAI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(147, 0, 'AMARILDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(148, 0, 'AMARO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(149, 0, 'AMAURI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(150, 0, 'AMAURY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(151, 0, 'AMERICO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(152, 0, 'AMÉRICO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Paisagistas', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (153, 0, 'AMILCAR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (154, 0, 'AMÍLCAR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (155, 0, 'AMILTON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (156, 0, 'AMIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (157, 0, 'AMÓS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(158, 0, 'ANANIAS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
+(158, 0, 'ANANIAS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Arquiteto', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (159, 0, 'ANASTACIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (160, 0, 'ANDERSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (161, 0, 'ANDRE ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
@@ -10375,12 +10625,12 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (167, 0, 'ANDREVALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (168, 0, 'ANDREW ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
 (169, 0, 'ANDREY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'carpinteiro', '', NULL, '2019-12-02 14:26:07', '2019-12-02 18:26:07', 0, 0),
-(170, 0, 'ANESIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(171, 0, 'ANGEL ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(172, 0, 'ANGELINO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(173, 0, 'ANGÉLIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(174, 0, 'ANGELISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(175, 0, 'ANGELO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(170, 0, 'ANESIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(171, 0, 'ANGEL ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(172, 0, 'ANGELINO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(173, 0, 'ANGÉLIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(174, 0, 'ANGELISIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(175, 0, 'ANGELO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Gesseiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (176, 0, 'ÂNGELO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (177, 0, 'ANIBAL ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (178, 0, 'ANIBIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
@@ -10392,13 +10642,13 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (184, 0, 'ANOÉ ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (185, 0, 'ANSELMO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (186, 0, 'ANTÉLIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(187, 0, 'ANTENOR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(188, 0, 'ANTONINHO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(189, 0, 'ANTONIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(190, 0, 'ANTÔNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(191, 0, 'ANTÕNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(192, 0, 'ANTONY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(193, 0, 'APARECIDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(187, 0, 'ANTENOR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(188, 0, 'ANTONINHO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(189, 0, 'ANTONIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(190, 0, 'ANTÔNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(191, 0, 'ANTÕNIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(192, 0, 'ANTONY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(193, 0, 'APARECIDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Armador', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (194, 0, 'AQUILÁS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (195, 0, 'AQUILES ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (196, 0, 'ARALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
@@ -10414,36 +10664,36 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (206, 0, 'ARISMILDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (207, 0, 'ARISTIDES ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (208, 0, 'ARISTON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(209, 0, 'ARIVALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(210, 0, 'ARLEI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(211, 0, 'ARLINDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(212, 0, 'ARMANDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(213, 0, 'ARMINDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(214, 0, 'ARNALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(215, 0, 'ARNESTO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(216, 0, 'ARNOLD ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(217, 0, 'ARNOLDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(218, 0, 'ARNULFO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(219, 0, 'AROLDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(220, 0, 'ARSENIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(221, 0, 'ARTHUR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(222, 0, 'ARTUR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(223, 0, 'ARTURO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(224, 0, 'ARY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(225, 0, 'ASSIS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(226, 0, 'ASTURIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(227, 0, 'ATAIDE ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(228, 0, 'ATAMIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(229, 0, 'ATILA ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(230, 0, 'ATILIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(231, 0, 'Atleta ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(232, 0, 'ATTILIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(233, 0, 'AUAD ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(234, 0, 'AUDAIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(235, 0, 'AUGUSTO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(236, 0, 'AURELIANO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(237, 0, 'AURELINO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(238, 0, 'AURELIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(209, 0, 'ARIVALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(210, 0, 'ARLEI ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(211, 0, 'ARLINDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(212, 0, 'ARMANDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(213, 0, 'ARMINDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(214, 0, 'ARNALDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(215, 0, 'ARNESTO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(216, 0, 'ARNOLD ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(217, 0, 'ARNOLDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(218, 0, 'ARNULFO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(219, 0, 'AROLDO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(220, 0, 'ARSENIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(221, 0, 'ARTHUR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Técnico em Edificações', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(222, 0, 'ARTUR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(223, 0, 'ARTURO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(224, 0, 'ARY ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(225, 0, 'ASSIS ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(226, 0, 'ASTURIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(227, 0, 'ATAIDE ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(228, 0, 'ATAMIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Vidraceiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(229, 0, 'ATILA ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(230, 0, 'ATILIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(231, 0, 'Atleta ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(232, 0, 'ATTILIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(233, 0, 'AUAD ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(234, 0, 'AUDAIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(235, 0, 'AUGUSTO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(236, 0, 'AURELIANO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(237, 0, 'AURELINO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(238, 0, 'AURELIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Engenheiro Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (239, 0, 'AURÉLIO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (240, 0, 'AUREO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (241, 0, 'ÁUREO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
@@ -10455,20 +10705,54 @@ INSERT INTO `usuario` (`id_usuario`, `CPF`, `nome`, `sobrenome`, `img`, `sexo`, 
 (247, 0, 'AVELINO ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pedreiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (248, 0, 'AVERLANDSON ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pedreiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
 (249, 0, 'AZIZ ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Pedreiro', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
-(250, 0, 'BACHIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0);
+(250, 0, 'BACHIR ', '', '', 'M', NULL, 0, 0, NULL, '@gmail.com', '', 'Eletricista', '', NULL, '2019-12-02 14:27:39', '2019-12-02 18:27:39', 0, 0),
+(270, 0, 'mais um teste ', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$LrX3R4FMK1nnTvDM1a263.93Ez1JhCuYgRmFi9rz3USfePqRpfRqq', NULL, '2024-05-03 13:21:07', '2024-05-03 17:21:07', 0, 0),
+(271, 0, 'mais um teste ', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$vXQ5JM.PQfm9smcdJ/Ji5.H9psQDmmfGEMRrEHWzZAqfRYgc/0nvi', NULL, '2024-05-03 13:21:31', '2024-05-03 17:21:31', 0, 0),
+(272, 0, 'mais um teste ', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$1TedOTl6n7EnEPJDKy/5quwAmQw10RWtM27gWPJrcwKHPNB/H2MuO', NULL, '2024-05-03 13:45:57', '2024-05-03 17:45:57', 0, 0),
+(273, 0, 'mais um teste ', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$vHWcZiFw5XKZS2VQfPJ/guW1XhmJVPc3rSqM7XuMlHmoVrHtPCeU2', NULL, '2024-05-03 13:48:09', '2024-05-03 17:48:09', 0, 0),
+(274, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.coms', 'nilsontesteq', '', '$2y$10$was1eXCCtESUtXixYG667O4w3DZ61/StBB/U5hJVtSIAutuTD6HHC', NULL, '2024-05-03 13:51:41', '2024-05-03 17:51:41', 0, 0),
+(275, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comss', 'nilsontesteqs', '', '$2y$10$t7uagq8WrlMMDDacUxJhaeI/r.hk9AJ0cSmj5GlwW1gmaYZ6Xds8a', NULL, '2024-05-03 14:17:31', '2024-05-03 18:17:31', 0, 0),
+(276, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comsssd', 'nilsontesteqsss', '', '$2y$10$EiYXm4mSCFe2OyeiSqBRkOwhWsf9YTfuMh9C097l.cILKSjQZWcgm', NULL, '2024-05-03 14:18:40', '2024-05-03 18:18:40', 0, 0),
+(277, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comdads', 'nilsontesteqssss', '', '$2y$10$IO6CJzNEEFAPAv6stpxgV.utBFg3diRl9KKQNlx2kn1Q7/XedJVfe', NULL, '2024-05-03 14:20:21', '2024-05-03 18:20:21', 0, 0),
+(278, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comdasdasdasd', 'nilsontestedaasdasdasdasd', '', '$2y$10$Ix7HVJMqh2x2yc4rQVzQMeTUQUSQrgJhaHdufZwEf7hYOnjBNtWSC', NULL, '2024-05-03 16:37:57', '2024-05-03 20:37:57', 0, 0),
+(279, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comdasdasdasd', 'nilsontestedaasdasdasdasd', '', '$2y$10$2kf1rVVuNHNM3pTzr3EjMumWgeN9y5npspOu8yPsMT88JKuvrIoPy', NULL, '2024-05-03 16:38:36', '2024-05-03 20:38:36', 0, 0),
+(280, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com.llb', 'nilsontestellb', '', '$2y$10$nUTD2lOVnwrYRjAsefe8CeGk/i95hHZuAyFd9HI6MsynRWu7JbRYK', NULL, '2024-05-03 16:43:26', '2024-05-03 20:43:26', 0, 0),
+(281, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com.llb', 'nilsontestellb', '', '$2y$10$GPHDH4EymT.AN1C6lxEeL.M163orKSrEPWcTgKLPzhWCQiEGGxhdy', NULL, '2024-05-03 16:44:41', '2024-05-03 20:44:41', 0, 0),
+(282, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com.llb', 'nilsontestellb', '', '$2y$10$F/Hc1hN8eAvvbhSEMeigwefT1OFcHGYKfzEP4NxBWPQ.IhftFNydq', NULL, '2024-05-03 16:44:55', '2024-05-03 20:44:55', 0, 0),
+(283, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com.llb', 'nilsontestellb', '', '$2y$10$jjKS5h8tezS53mHeD72P1u.QFh7CMn5GS.HyF2QX1OkvkI0IZ5iNu', NULL, '2024-05-03 16:45:09', '2024-05-03 20:45:09', 0, 0),
+(284, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comusermaisvez', 'nilsontesteusermaisvez', '', '$2y$10$hTte0C7RHrbEe.Tm5NQa9OTENw1xsDhka268njz19guzQDoUq.fbK', NULL, '2024-05-03 16:45:59', '2024-05-03 20:45:59', 0, 0),
+(285, 0, 'Jussara alexandre da silva', '', NULL, NULL, NULL, 0, 0, NULL, 'jussara@gmail.com', 'jussara', '', '$2y$10$EDWRdaBEEWu6jTkz.6pLFOxmVfRpP9hAS975fMXzyNyml6F7h2iNe', NULL, '2024-05-03 16:47:16', '2024-05-03 20:47:16', 0, 0),
+(286, 0, 'helenilsoon', '', NULL, NULL, NULL, 0, 0, NULL, 'helenilsoon@teste.com', 'helenilsoons', '', '$2y$10$d6mrssMDzda4jzThT7zGEu7lcChXfEZit6klJQHaTr2DR4zKN2Dou', NULL, '2024-05-03 16:49:43', '2024-05-03 20:49:43', 0, 0),
+(287, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$MJkepbdpwcXyBdnxxaW/2eCqWdE3rYq/ifZKOyarHTFfORE8RlN7a', NULL, '2024-05-03 23:44:44', '2024-05-04 03:44:44', 0, 0),
+(288, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$KEwR8hi1UoHjxVAb2ZR9qO4xo.8s5Agrdpm77in/2q.BPyUIKDNYK', NULL, '2024-05-03 23:44:52', '2024-05-04 03:44:52', 0, 0),
+(289, 0, 'dsdasdas', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$QhMNYJM.YF6i.K3ImSHKxudFMfZE0pxwp6NbvYDjgAUyeOmJwOL4W', NULL, '2024-05-04 00:02:43', '2024-05-04 04:02:43', 0, 0),
+(290, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comssda', 'nilsontestes', '', '$2y$10$DVmqx1b5WRNgAJELOxsIieESMfip6JOZVHgxyGuPS6dM.ZknDx8rK', NULL, '2024-05-04 01:03:23', '2024-05-04 05:03:23', 0, 0),
+(291, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$qzz7XhomnufyZprjKmY1EO6G6.P7jQonv80l2gb8p3pOGifrHVCjK', NULL, '2024-05-04 01:03:54', '2024-05-04 05:03:54', 0, 0),
+(292, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$mW9btm29MYrpATEZcWPW7eXtZrq3tIZYxtWYcu7JRagEyKAAs68ri', NULL, '2024-05-04 01:04:45', '2024-05-04 05:04:45', 0, 0),
+(293, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$gTMdubQ9/sVtroLDXrENeOx04NXKR.xbSwgMhAP.h0uWrC.dkdxLu', NULL, '2024-05-04 01:06:33', '2024-05-04 05:06:33', 0, 0),
+(294, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$qtAiv6FHWjWJEC1bsKhOLuoeeyRNBHvDFE5GX3MQVlcuHLzg8diFa', NULL, '2024-05-04 01:09:56', '2024-05-04 05:09:56', 0, 0),
+(295, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$QBCoSHrjyp9wkMxueZAhEum9g7bOsUXWPFqf0EcogaHtLqJxMzYEW', NULL, '2024-05-04 01:10:03', '2024-05-04 05:10:03', 0, 0),
+(296, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$sGyZuOET4rIGD8ve0Iuqfey.OhSp2Gtu.CLiMsbn6rw0Bg77jPvSq', NULL, '2024-05-04 01:10:24', '2024-05-04 05:10:24', 0, 0),
+(297, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$NzxTR58T7O0NldMkIYX6j.9SMIA1EayLFdN0RmO.9a97PCOuzakYW', NULL, '2024-05-04 01:14:30', '2024-05-04 05:14:30', 0, 0),
+(298, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$KqQ2j4SbNlWPTuViGuYRmu1kiP/PwfYtv2OilC9WCT9yCctW7VbUC', NULL, '2024-05-04 01:17:19', '2024-05-04 05:17:19', 0, 0),
+(299, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$gjaTqZlnwagCiUjsi.v1k.waZBC7QgO3gbn1vxKSvys4dIxr7nPjq', NULL, '2024-05-04 01:21:16', '2024-05-04 05:21:16', 0, 0),
+(300, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$P2oA1nezYO67rBbhRjgy8uNVCDOQEVuXeip3K0oBUVqvzEGO5tRg2', NULL, '2024-05-04 01:21:27', '2024-05-04 05:21:27', 0, 0),
+(301, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.com', 'nilsonteste', '', '$2y$10$9XjbFfnFqqiRBC1eSIcosOuWAGLrwbt9pn6DyRXGVoOsArdRfw5dq', NULL, '2024-05-04 01:22:57', '2024-05-04 05:22:57', 0, 0),
+(302, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.csom', 'nilsontestexs', '', '$2y$10$l.0fhgtddf/vwFy3YKnp9uG9q4kq11qX4C.hP05t6znp7zLt5rheC', NULL, '2024-05-04 01:54:46', '2024-05-04 05:54:46', 0, 0),
+(303, 0, 'nilsonteste oliver', '', NULL, NULL, NULL, 0, 0, NULL, 'nilsonteste@teste.comfdfd', 'nilsontestefd', '', '$2y$10$2orPUHkJdv3/gPnf9nSQNe4jaFzIGg34EPgscmO4Fwn2.quUUotTm', NULL, '2024-05-04 01:58:14', '2024-05-04 05:58:14', 0, 0);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `administradores`
+-- Índices de tabela `administradores`
 --
 ALTER TABLE `administradores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `avaliacoes`
+-- Índices de tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`id_avaliacoes`),
@@ -10476,52 +10760,52 @@ ALTER TABLE `avaliacoes`
   ADD KEY `fk_id_usuario_idx` (`id_usuario`);
 
 --
--- Índices para tabela `categoria_profissoes`
+-- Índices de tabela `categoria_profissoes`
 --
 ALTER TABLE `categoria_profissoes`
   ADD PRIMARY KEY (`id_categoria_profissao`);
 
 --
--- Índices para tabela `categoria_servico`
+-- Índices de tabela `categoria_servico`
 --
 ALTER TABLE `categoria_servico`
   ADD PRIMARY KEY (`idcategoria_servico`);
 
 --
--- Índices para tabela `endereco`
+-- Índices de tabela `endereco`
 --
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`id_endereco`),
   ADD KEY `fk_id_usuario_idx` (`id_usuario`);
 
 --
--- Índices para tabela `estados`
+-- Índices de tabela `estados`
 --
 ALTER TABLE `estados`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_estados_Pais1_idx` (`Pais_idPais`);
 
 --
--- Índices para tabela `newsletter`
+-- Índices de tabela `newsletter`
 --
 ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`idnewsletter`,`usuario_id_user`),
   ADD KEY `fk_newsletter_usuario1_idx` (`usuario_id_user`);
 
 --
--- Índices para tabela `pais`
+-- Índices de tabela `pais`
 --
 ALTER TABLE `pais`
   ADD PRIMARY KEY (`idPais`);
 
 --
--- Índices para tabela `profissoes`
+-- Índices de tabela `profissoes`
 --
 ALTER TABLE `profissoes`
   ADD PRIMARY KEY (`id_profissoes`);
 
 --
--- Índices para tabela `servico`
+-- Índices de tabela `servico`
 --
 ALTER TABLE `servico`
   ADD PRIMARY KEY (`idservico`),
@@ -10529,32 +10813,32 @@ ALTER TABLE `servico`
   ADD KEY `fk_servico_categoria_servico1_idx` (`categoria_servico_idcategoria_servico`);
 
 --
--- Índices para tabela `tb_cidades`
+-- Índices de tabela `tb_cidades`
 --
 ALTER TABLE `tb_cidades`
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `id_2` (`id`);
 
 --
--- Índices para tabela `tb_estados`
+-- Índices de tabela `tb_estados`
 --
 ALTER TABLE `tb_estados`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `tb_pessoas`
+-- Índices de tabela `tb_pessoas`
 --
 ALTER TABLE `tb_pessoas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -10568,6 +10852,12 @@ ALTER TABLE `avaliacoes`
 --
 ALTER TABLE `categoria_servico`
   MODIFY `idcategoria_servico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de tabela `endereco`
+--
+ALTER TABLE `endereco`
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
 -- AUTO_INCREMENT de tabela `newsletter`
@@ -10615,32 +10905,32 @@ ALTER TABLE `tb_pessoas`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `endereco`
+-- Restrições para tabelas `endereco`
 --
 ALTER TABLE `endereco`
   ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `estados`
+-- Restrições para tabelas `estados`
 --
 ALTER TABLE `estados`
   ADD CONSTRAINT `fk_estados_Pais1` FOREIGN KEY (`Pais_idPais`) REFERENCES `pais` (`idPais`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `newsletter`
+-- Restrições para tabelas `newsletter`
 --
 ALTER TABLE `newsletter`
   ADD CONSTRAINT `fk_newsletter_usuario1` FOREIGN KEY (`usuario_id_user`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `servico`
+-- Restrições para tabelas `servico`
 --
 ALTER TABLE `servico`
   ADD CONSTRAINT `fk_servico_categoria_servico` FOREIGN KEY (`categoria_servico_idcategoria_servico`) REFERENCES `categoria_servico` (`idcategoria_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION,

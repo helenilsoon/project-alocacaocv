@@ -12,7 +12,7 @@ return [
         $path.'login'=>'Login@index',
         $path.'lista-de-bairros'=>'cadastrarBairroDeUsuarios@addListaDeBairros',
         $path.'my-account'=>'MyAccount@index',
-        $path.'sair'=>'login@logout',
+        $path.'sair'=>'Login@logout',
         $path.'cadastrar'=>'Register@index',
         $path.'search'=>'Search@index',
         // $path.'user/create'=>'User@create',

@@ -49,7 +49,7 @@ use app\helpers\Csrf;
                     </div>
                     <div class="form-group">
                         <label for="senha">Senha *</label>
-                        <input type="password" class="form-control input-form" name="senha" id="senha" placeholder="*************" >
+                        <input type="password" class="form-control input-form" name="senha" id="senha" placeholder="*************" required >
                         <!--  <meter value="0" id="mtSenha" max="100"></meter>-->
                         <?php echo Csrf::createToken(); 
                         ?>

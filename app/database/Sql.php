@@ -18,7 +18,8 @@ namespace app\database;
 		private $lastInsertId ;
 
  	function __construct()
- 	{
+ 	{		
+		
 		if(file_exists("bd.env")){
 			$data = parse_ini_file("bd.env");
 			

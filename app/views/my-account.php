@@ -26,8 +26,10 @@ $_SESSION['token_perfil'] = $token;
         <div class="row mt-4  ">
             <div class="col-md-4 d-flex flex-column ">
                 <!--MENU-->
-
-                <?php require_once('perfilMyaccount.php') ?>
+              
+                <?php 
+                      
+                require_once(VIEW_PATH.'/perfilMyaccount.php') ?>
                 
                 <!--FIM MENU-->
             </div>
