@@ -2,6 +2,8 @@
 define("HOST",$_SERVER['SERVER_ADDR']);
 if(HOST == '127.0.0.1'){
    define("APP_ENV","local");
+}else{
+   define("APP_ENV","production");
 } 
 
 define("TESTE",'Ola helenilson welcome to webuild');
