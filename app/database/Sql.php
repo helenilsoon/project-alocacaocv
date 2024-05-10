@@ -19,10 +19,10 @@ namespace app\database;
 
  	function __construct()
  	{		
-		$envDB =__DIR__.'/bd.env';
 		
-		if(file_exists($envDB)){
-			$data = parse_ini_file("bdLocal.env");
+		//verifica se estiver no ambiente local
+		if(APP_ENV == "local"){
+			$data = parse_ini_file("databaseLocal.env");
 			
 		}else{
 			$data = parse_ini_file("bd.env");
