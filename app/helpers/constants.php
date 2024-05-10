@@ -1,5 +1,8 @@
 <?php
- 
+define("HOST",$_SERVER['SERVER_ADDR']);
+if(HOST == '127.0.0.1'){
+   define("APP_ENV","local");
+} 
 
 define("TESTE",'Ola helenilson welcome to webuild');
 define("CONTROLLER_PATH","app\\controllers\\");
