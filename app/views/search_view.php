@@ -52,11 +52,11 @@ if (isset($data['data']['professionais'])  && !empty($data['data']['professionai
         echo"</ul>
         </nav>";
 
-
-
+    // ddArray(get_defined_vars());
     foreach ($data['data']['professionais'] as $re) {
-
+         
         $id_usuario         = isset($re['id_usuario']) ? $re['id_usuario'] : '';
+        $uid                = isset($re['uid']) ? $re['uid'] : '';
         $experiencia        = isset($re['experiencia']) ? $re['experiencia'] : '';
         $nome               = isset($re['nome']) ? $re['nome'] : '';
         $sobre              = isset($re['sobre']) ? $re['sobre'] : '';
@@ -75,7 +75,7 @@ if (isset($data['data']['professionais'])  && !empty($data['data']['professionai
         // se nao tiver imagem aparece o icone
         if (!empty($img_url)) :
             echo "<div class='img-resultado rounded-circle mt-3 '>
-                                             <img src='img/userid" . $id_usuario . "/" . $img_url . " ' class='img-fluid img py-3' /   >
+                                             <img src='".IMG_PATH."userid" . $id_usuario . "/" . $img_url . " ' class='img-fluid img py-3' /   >
                                           </div>";
         else :
             //icone do usuario quando nao tiver imagem
@@ -124,7 +124,7 @@ if (isset($data['data']['professionais'])  && !empty($data['data']['professionai
                                 </div>
                             </div>
 
-                            <a class='btn-sm text-white px-4 py-2 mx-sm-2 rounded-pill btn-orange ' href='perfil?nome= $nome . '&id=' . $id_usuario '> ver perfil </a>
+                            <a class='btn-sm text-white px-4 py-2 mx-sm-2 rounded-pill btn-orange ' href='perfil/$uid'> ver perfil </a>
 
                         </div>
 

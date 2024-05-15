@@ -5,10 +5,8 @@ namespace app\controllers;
 use app\database\Sql;
 class cadastrarBairroDeUsuarios
 {
-   public function addListaDeBairros()
+   public function addListaDeBairros() 
    {
-
- 
     $query = new Sql();
     $listaDeUser= $query->select('SELECT * FROM usuario');
    
@@ -21,7 +19,6 @@ class cadastrarBairroDeUsuarios
         'Morro da Liberdade','Nossa Senhora Aparecida','Nossa Senhora das Graças	Centro','Nova Cidade','Nova Esperança','Novo Aleixo','Novo Israel','Parque 10 de Novembro	Centro','Petrópolis','Planalto','Ponta Negra','Praça 14 de Janeiro',
         'Presidente Vargas','Puraquequara','Raiz','Redenção','Santa Etelvina','Santa Luzia','Santo Agostinho','Santo Antônio','São Francisco','São Geraldo	Centro','São Jorge','São José Operário','São Lázaro','São Raimundo','Tancredo Neves',
         'Tarumã','Tarumã-Açu','Vila Buriti','Vila da Prata','Zumbi dos Palmares' ];
-   dd(count($listaDebairro));
  $cont = 2;
  $contadorBairro= 0;
  foreach($listaDeUser as $lista){

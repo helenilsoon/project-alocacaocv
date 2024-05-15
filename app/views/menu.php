@@ -17,7 +17,7 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container">
     <a class="navbar-brand" href="/">
-        <img src="assets/img/logo_webuild.png" class="" width="150" alt="">
+        <img src="<?= IMG_PATH?>logo_webuild.png" class="" width="150" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"> </span>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
      <div class="row w-100">
         <div class=" col-xl-8 col-lg-7 col-md-7 mx-auto  d-flex justify-content-center ">
 
-            <form method="GET" action="search" id="procurar_profissional" class=" col-sm-12 col-md-12  form-inline ">
+            <form method="GET" action="/search" id="procurar_profissional" class=" col-sm-12 col-md-12  form-inline ">
                 <span class="input-group-addon">
                     <input class="form-control   col-md-12 " type="search" id="search" name="pesquisa" placeholder="Qual profissional você precisa?" aria-label="Pesquisar " required>
 
@@ -74,7 +74,7 @@ if (!isset($_SESSION['user'])) {
                         echo "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
                         echo "Bem vindo " . $nome . "</a>";
                     } else {
-                        echo "<a class='btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange' href='cadastrar'>Cadastrar-se</a>";
+                        echo "<a class='btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange' href='/cadastrar'>Cadastrar-se</a>";
                     } ?>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -102,9 +102,9 @@ if (!isset($_SESSION['user'])) {
 
                 <li class="nav-item ">
                     <?php if ($nome) { ?>
-                        <a class="btn-sm text-white px-4 py-2 rounded-pill btn-orange " href="sair">Sair </a>
+                        <a class="btn-sm text-white px-4 py-2 rounded-pill btn-orange " href="/sair">Sair </a>
                     <?php } else {  ?>
-                        <a class="btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange " href="login"> entrar</a>
+                        <a class="btn-sm text-white px-4 py-2 mx-md-2 rounded-pill btn-orange " href="/login"> entrar</a>
                     <?php } ?>
                 </li>
             </ul>
